@@ -1,8 +1,6 @@
-
-
-/* =====================================
+/* =========================
    ELEMENTS
-===================================== */
+========================= */
 
 const openingNames =
     document.getElementById("openingNames");
@@ -43,110 +41,93 @@ const mapButton =
 const footerNames =
     document.getElementById("footerNames");
 
+const groomFamily =
+    document.getElementById("groomFamily");
+
+const brideFamily =
+    document.getElementById("brideFamily");
+
+const invitersList =
+    document.getElementById("invitersList");
+
+const videoContainer =
+    document.getElementById("videoContainer");
+
+const backgroundMusic =
+    document.getElementById("backgroundMusic");
+
+const musicBtn =
+    document.getElementById("musicBtn");
 
 
-/* =====================================
+/* =========================
    OPENING DATA
-===================================== */
+========================= */
 
 openingNames.innerHTML = `
-
     ${websiteData.groomName}
-
-    <span class="opening-heart">
-
-        ✦
-
-    </span>
-
+    <span>✦</span>
     ${websiteData.brideName}
-
 `;
-
 
 openingEvent.innerText =
     websiteData.eventName;
 
-
 openingDate.innerText =
-
     `${websiteData.date} | ${websiteData.day}`;
 
 
-
-/* =====================================
+/* =========================
    HERO DATA
-===================================== */
+========================= */
 
 coupleNames.innerHTML = `
-
     ${websiteData.groomName}
-
     <span>✦</span>
-
     ${websiteData.brideName}
-
 `;
-
 
 heroEvent.innerText =
     websiteData.eventName;
 
-
 heroDate.innerText =
-
     `${websiteData.date} | ${websiteData.time}`;
 
 
-
-/* =====================================
-   DETAILS
-===================================== */
+/* =========================
+   WEDDING DETAILS
+========================= */
 
 weddingDate.innerText =
     websiteData.date;
 
-
 weddingDay.innerText =
     websiteData.day;
-
 
 weddingTime.innerText =
     websiteData.time;
 
-
 venueName.innerText =
     websiteData.venueName;
 
-
 venueAddress.innerText =
     websiteData.venueAddress;
-
 
 mapButton.href =
     websiteData.mapLink;
 
 
-
-/* =====================================
+/* =========================
    FOOTER
-===================================== */
+========================= */
 
 footerNames.innerText =
-
-    `${websiteData.groomName}
-     ✦
-     ${websiteData.brideName}`;
+    `${websiteData.groomName} ✦ ${websiteData.brideName}`;
 
 
-
-/* =====================================
+/* =========================
    FAMILY
-===================================== */
-
-const groomFamily =
-    document.getElementById("groomFamily");
-
+========================= */
 
 websiteData.groomFamily.forEach(member => {
 
@@ -162,11 +143,6 @@ websiteData.groomFamily.forEach(member => {
     groomFamily.appendChild(item);
 
 });
-
-
-
-const brideFamily =
-    document.getElementById("brideFamily");
 
 
 websiteData.brideFamily.forEach(member => {
@@ -185,14 +161,9 @@ websiteData.brideFamily.forEach(member => {
 });
 
 
-
-/* =====================================
+/* =========================
    INVITERS
-===================================== */
-
-const invitersList =
-    document.getElementById("invitersList");
-
+========================= */
 
 websiteData.inviters.forEach(name => {
 
@@ -210,14 +181,9 @@ websiteData.inviters.forEach(name => {
 });
 
 
-
-/* =====================================
-   YOUTUBE FULL LINK
-===================================== */
-
-const videoContainer =
-    document.getElementById("videoContainer");
-
+/* =========================
+   YOUTUBE FULL LINK SUPPORT
+========================= */
 
 function getYouTubeEmbedUrl(url) {
 
@@ -226,9 +192,10 @@ function getYouTubeEmbedUrl(url) {
         const parsedUrl =
             new URL(url);
 
-
         let videoId = "";
 
+
+        /* youtu.be लिंक */
 
         if (
             parsedUrl.hostname.includes("youtu.be")
@@ -241,14 +208,21 @@ function getYouTubeEmbedUrl(url) {
         }
 
 
+        /* youtube.com लिंक */
+
         else if (
             parsedUrl.hostname.includes("youtube.com")
         ) {
+
+
+            /* Normal watch लिंक */
 
             videoId =
                 parsedUrl.searchParams
                     .get("v");
 
+
+            /* Shorts लिंक */
 
             if (
                 !videoId &&
@@ -262,6 +236,8 @@ function getYouTubeEmbedUrl(url) {
 
             }
 
+
+            /* Embed लिंक */
 
             if (
                 !videoId &&
@@ -285,9 +261,7 @@ function getYouTubeEmbedUrl(url) {
         }
 
 
-        return
-
-            `https://www.youtube.com/embed/${videoId}?rel=0`;
+        return `https://www.youtube.com/embed/${videoId}?rel=0`;
 
 
     }
@@ -301,6 +275,8 @@ function getYouTubeEmbedUrl(url) {
 }
 
 
+/* VIDEO LOAD */
+
 const embedUrl =
     getYouTubeEmbedUrl(
         websiteData.youtubeLink
@@ -312,21 +288,15 @@ if (embedUrl) {
     videoContainer.innerHTML = `
 
         <iframe
-
             src="${embedUrl}"
-
             title="Wedding Video"
-
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-
             allowfullscreen>
-
         </iframe>
 
     `;
 
 }
-
 
 else {
 
@@ -334,7 +304,7 @@ else {
 
         <div class="video-placeholder">
 
-            YouTube Video Link data.js मध्ये paste करा
+            व्हिडिओ उपलब्ध नाही
 
         </div>
 
@@ -343,28 +313,37 @@ else {
 }
 
 
+/* =========================
+   BACKGROUND MUSIC
+========================= */
 
-/* =====================================
+backgroundMusic.src =
+    websiteData.music;
+
+backgroundMusic.load();
+
+
+let musicPlaying = false;
+
+
+/* =========================
    OPEN INVITATION
-===================================== */
+========================= */
 
 const openInvitationBtn =
     document.getElementById(
         "openInvitationBtn"
     );
 
-
 const openingScreen =
     document.getElementById(
         "openingScreen"
     );
 
-
 const revealScreen =
     document.getElementById(
         "revealScreen"
     );
-
 
 const mainWebsite =
     document.getElementById(
@@ -372,33 +351,14 @@ const mainWebsite =
     );
 
 
-const music =
-    document.getElementById(
-        "backgroundMusic"
-    );
-
-
-const musicBtn =
-    document.getElementById(
-        "musicBtn"
-    );
-
-
-let musicPlaying = false;
-
-
-
 openInvitationBtn.addEventListener(
-
     "click",
-
     () => {
 
 
         /* MUSIC START */
 
-        music.play()
-
+        backgroundMusic.play()
             .then(() => {
 
                 musicPlaying = true;
@@ -408,7 +368,6 @@ openInvitationBtn.addEventListener(
                 );
 
             })
-
             .catch(() => {
 
                 musicPlaying = false;
@@ -416,8 +375,7 @@ openInvitationBtn.addEventListener(
             });
 
 
-
-        /* REVEAL */
+        /* REVEAL EFFECT */
 
         revealScreen.classList.add(
             "active"
@@ -430,7 +388,7 @@ openInvitationBtn.addEventListener(
                 "show"
             );
 
-        }, 450);
+        }, 350);
 
 
         setTimeout(() => {
@@ -439,7 +397,7 @@ openInvitationBtn.addEventListener(
                 "hide"
             );
 
-        }, 600);
+        }, 500);
 
 
         setTimeout(() => {
@@ -447,7 +405,7 @@ openInvitationBtn.addEventListener(
             openingScreen.style.display =
                 "none";
 
-        }, 2100);
+        }, 1800);
 
 
         setTimeout(() => {
@@ -455,30 +413,25 @@ openInvitationBtn.addEventListener(
             revealScreen.style.display =
                 "none";
 
-        }, 1800);
+        }, 1600);
 
 
     }
-
 );
 
 
-
-/* =====================================
+/* =========================
    MUSIC ON / OFF
-===================================== */
+========================= */
 
 musicBtn.addEventListener(
-
     "click",
-
     () => {
 
 
         if (musicPlaying) {
 
-
-            music.pause();
+            backgroundMusic.pause();
 
             musicPlaying = false;
 
@@ -486,14 +439,11 @@ musicBtn.addEventListener(
                 "playing"
             );
 
-
         }
 
         else {
 
-
-            music.play()
-
+            backgroundMusic.play()
                 .then(() => {
 
                     musicPlaying = true;
@@ -503,7 +453,6 @@ musicBtn.addEventListener(
                     );
 
                 })
-
                 .catch(() => {
 
                     musicPlaying = false;
@@ -514,5 +463,4 @@ musicBtn.addEventListener(
 
 
     }
-
 );

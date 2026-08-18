@@ -1,4 +1,5 @@
 const websiteData = {
+
     // वर व वधू
     groomName: "सचिन",
     brideName: "अस्मिता",
@@ -13,40 +14,57 @@ const websiteData = {
 
     // विवाहस्थळ
     venueName: "विश्वक्रांती लॉन्स & मंगल कार्यालय",
-    venueAddress: "माळी वस्ती, टाकळी सिकंदर, ता. मोहोळ, जि. सोलापूर",
+
+    venueAddress:
+        "माळी वस्ती, टाकळी सिकंदर, ता. मोहोळ, जि. सोलापूर",
 
     // Google Maps Link
-    mapLink: "https://maps.app.goo.gl/cnhoLzhaKFS9cF7J9",
+    mapLink:
+        "https://maps.app.goo.gl/cnhoLzhaKFS9cF7J9",
 
-    // YouTube Video Link
-    youtubeLink: "https://youtube.com/shorts/A5XskweuHtA?feature=share",
-
+    // YouTube Shorts ची पूर्ण Link
+    youtubeLink:
+        "https://youtube.com/shorts/A5XskweuHtA?feature=share",
 
     // Background Music
-    music: "assets/audio/music.mp3",
-
+    music:
+        "assets/audio/music.mp3",
 
     // वर पक्ष
     groomFamily: [
+
         "चि. सचिन",
+
         "कै. दिगंबर सोपान शिंदे (माळी) यांचा नातू",
+
         "श्री. औदुंबर दिगंबर शिंदे (माळी) यांचे ज्येष्ठ चिरंजीव",
+
         "रा. बाभुळगांव, ता. पंढरपूर, जि. सोलापूर"
+
     ],
 
     // वधू पक्ष
     brideFamily: [
+
         "चि. सौ. कां. अस्मिता",
+
         "श्री. सोपान रंगनाथ माळी (भाले) यांची नात",
+
         "श्री. संतोष सोपान माळी यांची ज्येष्ठ सुकन्या",
+
         "रा. देगांव (वा), ता. मोहोळ, जि. सोलापूर"
+
     ],
+
     // निमंत्रक
     inviters: [
 
         "सौ. विद्या औदुंबर व श्री. औदुंबर दिगंबर शिंदे (माळी)",
+
         "सौ. मिना शिवाजी व श्री. शिवाजी दिगंबर शिंदे (माळी)",
+
         "सौ. सारिका अनिल व श्री. अनिल दिगंबर शिंदे (माळी)",
+
         "गं. भा. सुभद्रा दिगंबर शिंदे (माळी)"
 
     ]

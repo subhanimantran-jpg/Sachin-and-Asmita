@@ -12,6 +12,7 @@
 
     <title>शुभविवाह सोहळा</title>
 
+
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
@@ -39,33 +40,31 @@
 <body>
 
 
-    <!-- =========================
-         OPENING SCREEN
-    ========================== -->
+    <!-- OPENING SCREEN -->
 
     <section
         id="openingScreen"
         class="opening-screen"
     >
 
-        <div class="opening-overlay"></div>
+        <div class="opening-border"></div>
 
-        <div class="mandala mandala-one"></div>
+        <div class="opening-pattern pattern-one"></div>
 
-        <div class="mandala mandala-two"></div>
+        <div class="opening-pattern pattern-two"></div>
 
 
         <div class="opening-content">
 
 
-            <div class="traditional-top">
+            <p class="ganesh-mantra">
 
                 ॥ श्री गणेशाय नमः ॥
 
-            </div>
+            </p>
 
 
-            <div class="gold-line"></div>
+            <div class="gold-divider"></div>
 
 
             <div class="ganpati-frame">
@@ -79,7 +78,7 @@
             </div>
 
 
-            <p class="opening-small">
+            <p class="blessing-text">
 
                 मंगलमूर्तीच्या कृपेने
 
@@ -96,15 +95,6 @@
                 id="openingEvent"
                 class="opening-event"
             ></p>
-
-
-            <div class="ornament">
-
-                <span></span>
-                <i></i>
-                <span></span>
-
-            </div>
 
 
             <p
@@ -129,9 +119,7 @@
 
 
 
-    <!-- =========================
-         REVEAL EFFECT
-    ========================== -->
+    <!-- REVEAL EFFECT -->
 
     <div
         id="revealScreen"
@@ -144,9 +132,7 @@
 
 
 
-    <!-- =========================
-         MAIN WEBSITE
-    ========================== -->
+    <!-- MAIN WEBSITE -->
 
     <main
         id="mainWebsite"
@@ -159,7 +145,7 @@
         <button
             id="musicBtn"
             class="music-btn"
-            aria-label="Music"
+            aria-label="Background Music"
         >
 
             <span class="music-bars">
@@ -174,12 +160,12 @@
 
 
 
-        <!-- =========================
-             HERO
-        ========================== -->
+        <!-- HERO SECTION -->
 
         <section class="hero-section">
 
+
+            <div class="hero-border"></div>
 
             <div class="hero-pattern"></div>
 
@@ -194,11 +180,11 @@
                 </p>
 
 
-                <div class="hero-small-line">
+                <p class="hero-subtitle">
 
                     शुभ मंगल सावधान
 
-                </div>
+                </p>
 
 
                 <h1
@@ -207,10 +193,12 @@
                 ></h1>
 
 
-                <div class="center-ornament">
+                <div class="ornament-line">
 
                     <span></span>
+
                     <b></b>
+
                     <span></span>
 
                 </div>
@@ -228,6 +216,23 @@
                 ></p>
 
 
+
+                <!-- YOUTUBE VIDEO -->
+
+                <div
+                    id="videoContainer"
+                    class="video-container hero-video"
+                >
+
+                    <div class="video-placeholder">
+
+                        व्हिडिओ लोड होत आहे...
+
+                    </div>
+
+                </div>
+
+
                 <div class="scroll-down">
 
                     <span>खाली स्क्रोल करा</span>
@@ -243,9 +248,7 @@
 
 
 
-        <!-- =========================
-             WEDDING DETAILS
-        ========================== -->
+        <!-- WEDDING DETAILS -->
 
         <section class="details-section">
 
@@ -254,11 +257,7 @@
 
                 <div class="title-line"></div>
 
-                <h2>
-
-                    विवाह सोहळा
-
-                </h2>
+                <h2>विवाह सोहळा</h2>
 
                 <div class="title-line"></div>
 
@@ -270,15 +269,17 @@
 
                 <article class="detail-card">
 
-                    <span class="detail-label">
+                    <p class="detail-label">
 
                         दिनांक
 
-                    </span>
+                    </p>
+
 
                     <h3
                         id="weddingDate"
                     ></h3>
+
 
                     <p
                         id="weddingDay"
@@ -287,13 +288,15 @@
                 </article>
 
 
+
                 <article class="detail-card">
 
-                    <span class="detail-label">
+                    <p class="detail-label">
 
                         वेळ
 
-                    </span>
+                    </p>
+
 
                     <h3
                         id="weddingTime"
@@ -302,17 +305,20 @@
                 </article>
 
 
+
                 <article class="detail-card venue-card">
 
-                    <span class="detail-label">
+                    <p class="detail-label">
 
                         विवाहस्थळ
 
-                    </span>
+                    </p>
+
 
                     <h3
                         id="venueName"
                     ></h3>
+
 
                     <p
                         id="venueAddress"
@@ -323,6 +329,7 @@
                         id="mapButton"
                         class="map-button"
                         target="_blank"
+                        rel="noopener"
                     >
 
                         स्थळ पहा
@@ -338,49 +345,7 @@
 
 
 
-        <!-- =========================
-             VIDEO
-        ========================== -->
-
-        <section class="video-section">
-
-
-            <div class="section-title light-title">
-
-                <div class="title-line"></div>
-
-                <h2>
-
-                    शुभेच्छा संदेश
-
-                </h2>
-
-                <div class="title-line"></div>
-
-            </div>
-
-
-            <div
-                id="videoContainer"
-                class="video-container"
-            >
-
-                <div class="video-placeholder">
-
-                    Video उपलब्ध नाही
-
-                </div>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =========================
-             FAMILY
-        ========================== -->
+        <!-- FAMILY SECTION -->
 
         <section class="family-section">
 
@@ -389,11 +354,7 @@
 
                 <div class="title-line"></div>
 
-                <h2>
-
-                    परिवार
-
-                </h2>
+                <h2>परिवार</h2>
 
                 <div class="title-line"></div>
 
@@ -405,11 +366,11 @@
 
                 <div class="family-card">
 
-                    <div class="family-heading">
+                    <h3 class="family-heading">
 
                         वर पक्ष
 
-                    </div>
+                    </h3>
 
 
                     <div
@@ -423,11 +384,11 @@
 
                 <div class="family-card">
 
-                    <div class="family-heading">
+                    <h3 class="family-heading">
 
                         वधू पक्ष
 
-                    </div>
+                    </h3>
 
 
                     <div
@@ -444,9 +405,7 @@
 
 
 
-        <!-- =========================
-             INVITERS
-        ========================== -->
+        <!-- INVITERS -->
 
         <section class="inviter-section">
 
@@ -458,11 +417,7 @@
 
                     <div class="title-line"></div>
 
-                    <h2>
-
-                        निमंत्रक
-
-                    </h2>
+                    <h2>निमंत्रक</h2>
 
                     <div class="title-line"></div>
 
@@ -481,18 +436,12 @@
 
 
 
-        <!-- =========================
-             FOOTER
-        ========================== -->
+        <!-- FOOTER -->
 
         <footer>
 
 
-            <div class="footer-symbol">
-
-                ❦
-
-            </div>
+            <div class="footer-divider"></div>
 
 
             <h2
@@ -500,11 +449,14 @@
             ></h2>
 
 
-            <div class="footer-ornament">
+            <p>
 
-                ───────── ✦ ─────────
+                मंगलमय शुभेच्छा
 
-            </div>
+            </p>
+
+
+            <div class="footer-divider"></div>
 
 
         </footer>
@@ -514,19 +466,13 @@
 
 
 
-    <!-- MUSIC -->
+    <!-- BACKGROUND MUSIC -->
 
     <audio
         id="backgroundMusic"
         loop
-    >
-
-        <source
-            src="assets/audio/music.mp3"
-            type="audio/mpeg"
-        >
-
-    </audio>
+        preload="auto"
+    ></audio>
 
 
     <script src="data.js"></script>
