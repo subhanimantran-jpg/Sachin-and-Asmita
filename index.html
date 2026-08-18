@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>शुभविवाह सोहळा</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         OPENING SCREEN
+    ========================== -->
+
+    <section
+        id="openingScreen"
+        class="opening-screen"
+    >
+
+        <div class="opening-overlay"></div>
+
+        <div class="mandala mandala-one"></div>
+
+        <div class="mandala mandala-two"></div>
+
+
+        <div class="opening-content">
+
+
+            <div class="traditional-top">
+
+                ॥ श्री गणेशाय नमः ॥
+
+            </div>
+
+
+            <div class="gold-line"></div>
+
+
+            <div class="ganpati-frame">
+
+                <img
+                    src="assets/images/ganpati.jpg"
+                    alt="श्री गणेश"
+                    class="ganpati-image"
+                >
+
+            </div>
+
+
+            <p class="opening-small">
+
+                मंगलमूर्तीच्या कृपेने
+
+            </p>
+
+
+            <h1
+                id="openingNames"
+                class="opening-names"
+            ></h1>
+
+
+            <p
+                id="openingEvent"
+                class="opening-event"
+            ></p>
+
+
+            <div class="ornament">
+
+                <span></span>
+                <i></i>
+                <span></span>
+
+            </div>
+
+
+            <p
+                id="openingDate"
+                class="opening-date"
+            ></p>
+
+
+            <button
+                id="openInvitationBtn"
+                class="open-button"
+            >
+
+                निमंत्रण उघडा
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         REVEAL EFFECT
+    ========================== -->
+
+    <div
+        id="revealScreen"
+        class="reveal-screen"
+    >
+
+        <div class="reveal-circle"></div>
+
+    </div>
+
+
+
+    <!-- =========================
+         MAIN WEBSITE
+    ========================== -->
+
+    <main
+        id="mainWebsite"
+        class="main-website"
+    >
+
+
+        <!-- MUSIC BUTTON -->
+
+        <button
+            id="musicBtn"
+            class="music-btn"
+            aria-label="Music"
+        >
+
+            <span class="music-bars">
+
+                <i></i>
+                <i></i>
+                <i></i>
+
+            </span>
+
+        </button>
+
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero-section">
+
+
+            <div class="hero-pattern"></div>
+
+
+            <div class="hero-inner">
+
+
+                <p class="hero-ganesh">
+
+                    ॥ श्री गणेशाय नमः ॥
+
+                </p>
+
+
+                <div class="hero-small-line">
+
+                    शुभ मंगल सावधान
+
+                </div>
+
+
+                <h1
+                    id="coupleNames"
+                    class="couple-names"
+                ></h1>
+
+
+                <div class="center-ornament">
+
+                    <span></span>
+                    <b></b>
+                    <span></span>
+
+                </div>
+
+
+                <p
+                    id="heroEvent"
+                    class="hero-event"
+                ></p>
+
+
+                <p
+                    id="heroDate"
+                    class="hero-date"
+                ></p>
+
+
+                <div class="scroll-down">
+
+                    <span>खाली स्क्रोल करा</span>
+
+                    <div class="scroll-line"></div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             WEDDING DETAILS
+        ========================== -->
+
+        <section class="details-section">
+
+
+            <div class="section-title">
+
+                <div class="title-line"></div>
+
+                <h2>
+
+                    विवाह सोहळा
+
+                </h2>
+
+                <div class="title-line"></div>
+
+            </div>
+
+
+            <div class="details-wrapper">
+
+
+                <article class="detail-card">
+
+                    <span class="detail-label">
+
+                        दिनांक
+
+                    </span>
+
+                    <h3
+                        id="weddingDate"
+                    ></h3>
+
+                    <p
+                        id="weddingDay"
+                    ></p>
+
+                </article>
+
+
+                <article class="detail-card">
+
+                    <span class="detail-label">
+
+                        वेळ
+
+                    </span>
+
+                    <h3
+                        id="weddingTime"
+                    ></h3>
+
+                </article>
+
+
+                <article class="detail-card venue-card">
+
+                    <span class="detail-label">
+
+                        विवाहस्थळ
+
+                    </span>
+
+                    <h3
+                        id="venueName"
+                    ></h3>
+
+                    <p
+                        id="venueAddress"
+                    ></p>
+
+
+                    <a
+                        id="mapButton"
+                        class="map-button"
+                        target="_blank"
+                    >
+
+                        स्थळ पहा
+
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             VIDEO
+        ========================== -->
+
+        <section class="video-section">
+
+
+            <div class="section-title light-title">
+
+                <div class="title-line"></div>
+
+                <h2>
+
+                    शुभेच्छा संदेश
+
+                </h2>
+
+                <div class="title-line"></div>
+
+            </div>
+
+
+            <div
+                id="videoContainer"
+                class="video-container"
+            >
+
+                <div class="video-placeholder">
+
+                    Video उपलब्ध नाही
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             FAMILY
+        ========================== -->
+
+        <section class="family-section">
+
+
+            <div class="section-title">
+
+                <div class="title-line"></div>
+
+                <h2>
+
+                    परिवार
+
+                </h2>
+
+                <div class="title-line"></div>
+
+            </div>
+
+
+            <div class="family-wrapper">
+
+
+                <div class="family-card">
+
+                    <div class="family-heading">
+
+                        वर पक्ष
+
+                    </div>
+
+
+                    <div
+                        id="groomFamily"
+                        class="family-list"
+                    ></div>
+
+                </div>
+
+
+
+                <div class="family-card">
+
+                    <div class="family-heading">
+
+                        वधू पक्ष
+
+                    </div>
+
+
+                    <div
+                        id="brideFamily"
+                        class="family-list"
+                    ></div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             INVITERS
+        ========================== -->
+
+        <section class="inviter-section">
+
+
+            <div class="inviter-inner">
+
+
+                <div class="section-title light-title">
+
+                    <div class="title-line"></div>
+
+                    <h2>
+
+                        निमंत्रक
+
+                    </h2>
+
+                    <div class="title-line"></div>
+
+                </div>
+
+
+                <div
+                    id="invitersList"
+                    class="inviters-list"
+                ></div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer>
+
+
+            <div class="footer-symbol">
+
+                ❦
+
+            </div>
+
+
+            <h2
+                id="footerNames"
+            ></h2>
+
+
+            <div class="footer-ornament">
+
+                ───────── ✦ ─────────
+
+            </div>
+
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- MUSIC -->
+
+    <audio
+        id="backgroundMusic"
+        loop
+    >
+
+        <source
+            src="assets/audio/music.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <script src="data.js"></script>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
