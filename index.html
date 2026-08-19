@@ -13,6 +13,10 @@
     <title>शुभ निमंत्रण</title>
 
 
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
+
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
@@ -25,10 +29,12 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Marathi&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
         rel="stylesheet"
     >
 
+
+    <!-- CSS -->
 
     <link
         rel="stylesheet"
@@ -41,31 +47,43 @@
 <body>
 
 
-    <!-- OPENING SCREEN -->
+    <!-- =========================
+         OPENING SCREEN
+    ========================== -->
 
     <section
         id="openingScreen"
         class="opening-screen"
     >
 
-        <div class="opening-overlay"></div>
+        <div class="opening-border"></div>
+
+
+        <!-- LOGO -->
+
+        <img
+            src="assets/images/logo.png"
+            alt="शुभ निमंत्रण"
+            class="opening-logo"
+        >
 
 
         <div class="opening-content">
 
 
-            <!-- LOGO -->
-
-            <img
-                src="assets/images/logo.png"
-                alt="Logo"
-                class="opening-logo"
-            >
-
-
             <p class="ganesh-mantra">
 
                 ॥ श्री गणेशाय नमः ॥
+
+            </p>
+
+
+            <div class="gold-divider"></div>
+
+
+            <p class="blessing-text">
+
+                मंगलमूर्तीच्या कृपेने
 
             </p>
 
@@ -105,7 +123,9 @@
 
 
 
-    <!-- MAIN WEBSITE -->
+    <!-- =========================
+         MAIN WEBSITE
+    ========================== -->
 
     <main
         id="mainWebsite"
@@ -113,34 +133,47 @@
     >
 
 
-        <!-- MUSIC BUTTON -->
+        <!-- =========================
+             MUSIC BUTTON
+        ========================== -->
 
         <button
             id="musicBtn"
             class="music-btn"
             type="button"
+            aria-label="Music On Off"
         >
 
-            ♫
+            <span class="music-bars">
+
+                <i></i>
+                <i></i>
+                <i></i>
+
+            </span>
 
         </button>
 
 
 
-        <!-- HERO -->
+        <!-- =========================
+             HERO
+        ========================== -->
 
         <section class="hero-section">
 
 
-            <div class="hero-overlay"></div>
+            <div class="hero-border"></div>
 
 
-            <div class="hero-content">
+            <div class="hero-inner">
 
+
+                <!-- LOGO -->
 
                 <img
                     src="assets/images/logo.png"
-                    alt="Logo"
+                    alt="शुभ निमंत्रण"
                     class="hero-logo"
                 >
 
@@ -154,7 +187,7 @@
 
                 <p class="hero-subtitle">
 
-                    शुभ मंगल सावधान
+                    आपले स्नेहांकित निमंत्रण
 
                 </p>
 
@@ -165,9 +198,13 @@
                 ></h1>
 
 
-                <div class="gold-line">
+                <div class="ornament-line">
 
-                    ✦
+                    <span></span>
+
+                    <b></b>
+
+                    <span></span>
 
                 </div>
 
@@ -185,98 +222,85 @@
 
 
 
-                <!-- VIDEO -->
+                <!-- =========================
+                     VIDEO
+                ========================= -->
 
-                <div
-                    id="videoContainer"
-                    class="video-container"
-                >
+                <div class="video-wrapper">
 
-                    व्हिडिओ लोड होत आहे...
+                    <div class="video-container">
+
+                        <video
+                            id="weddingVideo"
+                            playsinline
+                            preload="metadata"
+                            controls
+                        >
+
+                            <source
+                                src="assets/video/wedding.mp4"
+                                type="video/mp4"
+                            >
+
+                            तुमचा browser video support करत नाही.
+
+                        </video>
+
+                    </div>
 
                 </div>
 
 
-                <p class="scroll-text">
 
-                    खाली स्क्रोल करा ↓
+                <p class="invitation-text">
+
+                    पहिला प्रहर एक क्षण, मेंदीचा बहर एक क्षण, लगीन घाई एक क्षण, वाजे सनई एक क्षण, अंतरपाठ एक क्षण, सर्व सोनेरी क्षणांचा हा जणू एक सण…म्हणूनच आपणांस या सोनेरी क्षणाचे साक्षीदार होण्यासाठी अगत्याचे आमंत्रण 
 
                 </p>
 
 
+                <div class="scroll-down">
+
+                    <span>
+                        खाली स्क्रोल करा ↓
+                    </span>
+
+                </div>
+
+
             </div>
 
         </section>
 
 
 
-        <!-- PRE WEDDING -->
-
-        <section class="pre-wedding-section">
-
-
-            <div class="section-heading">
-
-                <span></span>
-
-                <h2
-                    id="preWeddingEvent"
-                ></h2>
-
-                <span></span>
-
-            </div>
-
-
-            <div class="pre-wedding-card">
-
-
-                <p
-                    id="preWeddingDate"
-                ></p>
-
-
-                <p
-                    id="preWeddingTime"
-                ></p>
-
-
-                <p
-                    id="preWeddingVenue"
-                ></p>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- WEDDING DETAILS -->
+        <!-- =========================
+             WEDDING DETAILS
+        ========================== -->
 
         <section class="details-section">
 
 
-            <div class="section-heading">
+            <div class="section-title">
 
-                <span></span>
+                <div class="title-line"></div>
 
                 <h2>
-
                     विवाह सोहळा
-
                 </h2>
 
-                <span></span>
+                <div class="title-line"></div>
 
             </div>
+
 
 
             <div class="details-wrapper">
 
 
-                <div class="detail-card">
+                <!-- DATE -->
+
+                <article class="detail-card">
 
                     <p class="detail-label">
 
@@ -294,12 +318,13 @@
                         id="weddingDay"
                     ></p>
 
-
-                </div>
-
+                </article>
 
 
-                <div class="detail-card">
+
+                <!-- TIME -->
+
+                <article class="detail-card">
 
                     <p class="detail-label">
 
@@ -312,12 +337,13 @@
                         id="weddingTime"
                     ></h3>
 
-
-                </div>
-
+                </article>
 
 
-                <div class="detail-card venue-card">
+
+                <!-- VENUE -->
+
+                <article class="detail-card">
 
                     <p class="detail-label">
 
@@ -347,8 +373,7 @@
 
                     </a>
 
-
-                </div>
+                </article>
 
 
             </div>
@@ -358,33 +383,69 @@
 
 
 
-        <!-- FAMILY -->
+        <!-- =========================
+             EXTRA EVENT
+        ========================== -->
+
+        <section
+            id="extraEventSection"
+            class="extra-event-section"
+        >
+
+            <div class="section-title">
+
+                <div class="title-line"></div>
+
+                <h2>
+                    इतर कार्यक्रम
+                </h2>
+
+                <div class="title-line"></div>
+
+            </div>
+
+
+            <div class="extra-event-card">
+
+                <p
+                    id="extraEvent"
+                ></p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FAMILY
+        ========================== -->
 
         <section class="family-section">
 
 
-            <div class="section-heading">
+            <div class="section-title">
 
-                <span></span>
+                <div class="title-line"></div>
 
                 <h2>
-
                     परिवार
-
                 </h2>
 
-                <span></span>
+                <div class="title-line"></div>
 
             </div>
+
 
 
             <div class="family-wrapper">
 
 
+                <!-- GROOM -->
+
                 <div class="family-card">
 
-
-                    <h3>
+                    <h3 class="family-heading">
 
                         वर पक्ष
 
@@ -395,15 +456,15 @@
                         id="groomFamily"
                     ></div>
 
-
                 </div>
 
 
 
+                <!-- BRIDE -->
+
                 <div class="family-card">
 
-
-                    <h3>
+                    <h3 class="family-heading">
 
                         वधू पक्ष
 
@@ -413,7 +474,6 @@
                     <div
                         id="brideFamily"
                     ></div>
-
 
                 </div>
 
@@ -425,22 +485,22 @@
 
 
 
-        <!-- INVITERS -->
+        <!-- =========================
+             INVITERS
+        ========================== -->
 
         <section class="inviter-section">
 
 
-            <div class="section-heading light-heading">
+            <div class="section-title light-title">
 
-                <span></span>
+                <div class="title-line"></div>
 
                 <h2>
-
                     निमंत्रक
-
                 </h2>
 
-                <span></span>
+                <div class="title-line"></div>
 
             </div>
 
@@ -455,36 +515,37 @@
 
 
 
-        <!-- FOOTER -->
+        <!-- =========================
+             FOOTER
+        ========================== -->
 
         <footer>
 
 
             <img
                 src="assets/images/logo.png"
-                alt="Logo"
+                alt="शुभ निमंत्रण"
                 class="footer-logo"
             >
 
 
-            <p>
+            <p class="footer-text">
 
-                आपल्या उपस्थितीने हा मंगल सोहळा
-                अधिक आनंदमय करावा,
-                ही नम्र विनंती.
+                आपल्या उपस्थितीची आम्ही आतुरतेने वाट पाहत आहोत
 
             </p>
 
 
+            <div class="footer-divider"></div>
+
+
             <a
-                id="instagramLink"
-                class="instagram-link"
-                href="#"
+                href="https://www.instagram.com/"
                 target="_blank"
-                rel="noopener"
+                class="instagram-link"
             >
 
-                Instagram
+                Instagram वर आम्हाला Follow करा
 
             </a>
 
@@ -496,7 +557,9 @@
 
 
 
-    <!-- BACKGROUND MUSIC -->
+    <!-- =========================
+         BACKGROUND MUSIC
+    ========================== -->
 
     <audio
         id="backgroundMusic"
@@ -505,7 +568,12 @@
     ></audio>
 
 
+    <!-- DATA -->
+
     <script src="data.js"></script>
+
+
+    <!-- SCRIPT -->
 
     <script src="script.js"></script>
 

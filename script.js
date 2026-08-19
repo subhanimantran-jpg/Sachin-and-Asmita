@@ -11,6 +11,7 @@ const openingEvent =
 const openingDate =
     document.getElementById("openingDate");
 
+
 const coupleNames =
     document.getElementById("coupleNames");
 
@@ -19,6 +20,7 @@ const heroEvent =
 
 const heroDate =
     document.getElementById("heroDate");
+
 
 const weddingDate =
     document.getElementById("weddingDate");
@@ -29,6 +31,7 @@ const weddingDay =
 const weddingTime =
     document.getElementById("weddingTime");
 
+
 const venueName =
     document.getElementById("venueName");
 
@@ -37,6 +40,11 @@ const venueAddress =
 
 const mapButton =
     document.getElementById("mapButton");
+
+
+const extraEvent =
+    document.getElementById("extraEvent");
+
 
 const groomFamily =
     document.getElementById("groomFamily");
@@ -47,20 +55,10 @@ const brideFamily =
 const invitersList =
     document.getElementById("invitersList");
 
-const preWeddingEvent =
-    document.getElementById("preWeddingEvent");
 
-const preWeddingDate =
-    document.getElementById("preWeddingDate");
+const weddingVideo =
+    document.getElementById("weddingVideo");
 
-const preWeddingTime =
-    document.getElementById("preWeddingTime");
-
-const preWeddingVenue =
-    document.getElementById("preWeddingVenue");
-
-const videoContainer =
-    document.getElementById("videoContainer");
 
 const backgroundMusic =
     document.getElementById("backgroundMusic");
@@ -68,8 +66,6 @@ const backgroundMusic =
 const musicBtn =
     document.getElementById("musicBtn");
 
-const instagramLink =
-    document.getElementById("instagramLink");
 
 const openInvitationBtn =
     document.getElementById("openInvitationBtn");
@@ -85,224 +81,315 @@ const mainWebsite =
    OPENING DATA
 ========================= */
 
-openingNames.innerHTML = `
-    ${websiteData.groomName}
-    <span>✦</span>
-    ${websiteData.brideName}
-`;
+if (openingNames) {
 
-openingEvent.innerText =
-    websiteData.eventName;
+    openingNames.innerHTML = `
+        ${websiteData.groomName}
+        <span>✦</span>
+        ${websiteData.brideName}
+    `;
 
-openingDate.innerText =
-    `${websiteData.date} | ${websiteData.day}`;
+}
+
+
+if (openingEvent) {
+
+    openingEvent.innerText =
+        websiteData.eventName;
+
+}
+
+
+if (openingDate) {
+
+    openingDate.innerText =
+        `${websiteData.date} | ${websiteData.day}`;
+
+}
 
 
 /* =========================
    HERO DATA
 ========================= */
 
-coupleNames.innerHTML = `
-    ${websiteData.groomName}
-    <span>✦</span>
-    ${websiteData.brideName}
-`;
+if (coupleNames) {
 
-heroEvent.innerText =
-    websiteData.eventName;
+    coupleNames.innerHTML = `
+        ${websiteData.groomName}
+        <span>✦</span>
+        ${websiteData.brideName}
+    `;
 
-heroDate.innerText =
-    `${websiteData.date} | ${websiteData.time}`;
+}
 
 
-/* =========================
-   PRE WEDDING
-========================= */
+if (heroEvent) {
 
-preWeddingEvent.innerText =
-    websiteData.preWeddingEvent;
+    heroEvent.innerText =
+        websiteData.eventName;
 
-preWeddingDate.innerText =
-    websiteData.preWeddingDate;
+}
 
-preWeddingTime.innerText =
-    websiteData.preWeddingTime;
 
-preWeddingVenue.innerText =
-    websiteData.preWeddingVenue;
+if (heroDate) {
+
+    heroDate.innerText =
+        `${websiteData.date} | ${websiteData.time}`;
+
+}
 
 
 /* =========================
    WEDDING DETAILS
 ========================= */
 
-weddingDate.innerText =
-    websiteData.date;
+if (weddingDate) {
 
-weddingDay.innerText =
-    websiteData.day;
+    weddingDate.innerText =
+        websiteData.date;
 
-weddingTime.innerText =
-    websiteData.time;
+}
 
-venueName.innerText =
-    websiteData.venueName;
 
-venueAddress.innerText =
-    websiteData.venueAddress;
+if (weddingDay) {
 
-mapButton.href =
-    websiteData.mapLink;
+    weddingDay.innerText =
+        websiteData.day;
+
+}
+
+
+if (weddingTime) {
+
+    weddingTime.innerText =
+        websiteData.time;
+
+}
+
+
+if (venueName) {
+
+    venueName.innerText =
+        websiteData.venueName;
+
+}
+
+
+if (venueAddress) {
+
+    venueAddress.innerText =
+        websiteData.venueAddress;
+
+}
+
+
+if (mapButton) {
+
+    mapButton.href =
+        websiteData.mapLink;
+
+}
 
 
 /* =========================
-   INSTAGRAM
+   EXTRA EVENT
 ========================= */
 
-instagramLink.href =
-    websiteData.instagramLink;
+if (extraEvent) {
+
+    extraEvent.innerText =
+        websiteData.extraEvent;
+
+}
 
 
 /* =========================
    FAMILY
 ========================= */
 
-websiteData.groomFamily.forEach(member => {
+if (
+    groomFamily &&
+    websiteData.groomFamily
+) {
 
-    const item =
-        document.createElement("div");
+    websiteData.groomFamily.forEach(
+        member => {
 
-    item.className =
-        "family-member";
+            const item =
+                document.createElement("div");
 
-    item.innerText =
-        member;
+            item.className =
+                "family-member";
 
-    groomFamily.appendChild(item);
+            item.innerText =
+                member;
 
-});
+            groomFamily.appendChild(item);
+
+        }
+    );
+
+}
 
 
-websiteData.brideFamily.forEach(member => {
+if (
+    brideFamily &&
+    websiteData.brideFamily
+) {
 
-    const item =
-        document.createElement("div");
+    websiteData.brideFamily.forEach(
+        member => {
 
-    item.className =
-        "family-member";
+            const item =
+                document.createElement("div");
 
-    item.innerText =
-        member;
+            item.className =
+                "family-member";
 
-    brideFamily.appendChild(item);
+            item.innerText =
+                member;
 
-});
+            brideFamily.appendChild(item);
+
+        }
+    );
+
+}
 
 
 /* =========================
    INVITERS
 ========================= */
 
-websiteData.inviters.forEach(name => {
+if (
+    invitersList &&
+    websiteData.inviters
+) {
 
-    const item =
-        document.createElement("div");
+    websiteData.inviters.forEach(
+        name => {
 
-    item.className =
-        "inviter-item";
+            const item =
+                document.createElement("div");
 
-    item.innerText =
-        name;
+            item.className =
+                "inviter-item";
 
-    invitersList.appendChild(item);
+            item.innerText =
+                name;
 
-});
+            invitersList.appendChild(item);
+
+        }
+    );
+
+}
+
+
+/* =========================
+   VIDEO SOURCE
+========================= */
+
+if (
+    weddingVideo &&
+    websiteData.video
+) {
+
+    const videoSource =
+        weddingVideo.querySelector("source");
+
+
+    if (videoSource) {
+
+        videoSource.src =
+            websiteData.video;
+
+        weddingVideo.load();
+
+    }
+
+}
 
 
 /* =========================
    BACKGROUND MUSIC
 ========================= */
 
-backgroundMusic.src =
-    websiteData.music;
-
-backgroundMusic.load();
-
 let musicPlaying = false;
+
+let musicPausedByVideo = false;
+
+
+if (
+    backgroundMusic &&
+    websiteData.music
+) {
+
+    backgroundMusic.src =
+        websiteData.music;
+
+    backgroundMusic.load();
+
+}
 
 
 /* =========================
-   GOOGLE DRIVE VIDEO
+   PLAY MUSIC
 ========================= */
 
-function getGoogleDriveVideoId(url) {
+function playMusic() {
 
-    if (!url) {
-
-        return null;
-
+    if (!backgroundMusic) {
+        return;
     }
 
-    const match =
-        url.match(/\/d\/([^/]+)/);
 
-    if (match && match[1]) {
+    backgroundMusic.play()
+        .then(() => {
 
-        return match[1];
+            musicPlaying = true;
 
-    }
+            if (musicBtn) {
 
-    return null;
+                musicBtn.classList.add(
+                    "playing"
+                );
+
+            }
+
+        })
+        .catch(() => {
+
+            musicPlaying = false;
+
+        });
 
 }
 
 
-const videoId =
-    getGoogleDriveVideoId(
-        websiteData.videoLink
-    );
+/* =========================
+   PAUSE MUSIC
+========================= */
+
+function pauseMusic() {
+
+    if (!backgroundMusic) {
+        return;
+    }
 
 
-if (videoId) {
+    backgroundMusic.pause();
 
-    const previewUrl =
-        `https://drive.google.com/file/d/${videoId}/preview`;
+    musicPlaying = false;
 
 
-    videoContainer.innerHTML = `
+    if (musicBtn) {
 
-        <iframe
-            id="weddingVideo"
-            src="${previewUrl}"
-            title="Wedding Video"
-            allow="autoplay; fullscreen"
-            allowfullscreen>
-        </iframe>
+        musicBtn.classList.remove(
+            "playing"
+        );
 
-    `;
-
-}
-
-else {
-
-    videoContainer.innerHTML = `
-
-        <div
-            style="
-                display:flex;
-                width:100%;
-                height:100%;
-                align-items:center;
-                justify-content:center;
-                color:white;
-            "
-        >
-
-            व्हिडिओ उपलब्ध नाही
-
-        </div>
-
-    `;
+    }
 
 }
 
@@ -311,93 +398,170 @@ else {
    OPEN INVITATION
 ========================= */
 
-openInvitationBtn.addEventListener(
-    "click",
-    function () {
+if (
+    openInvitationBtn &&
+    openingScreen &&
+    mainWebsite
+) {
+
+    openInvitationBtn.addEventListener(
+        "click",
+        function () {
 
 
-        /* MAIN WEBSITE SHOW */
+            /*
+             * Website show
+             */
 
-        mainWebsite.classList.add(
-            "show"
-        );
-
-
-        /* OPENING SCREEN HIDE */
-
-        openingScreen.classList.add(
-            "hide"
-        );
+            mainWebsite.classList.add(
+                "show"
+            );
 
 
-        /* MUSIC START */
+            /*
+             * Music सुरू
+             */
 
-        backgroundMusic.play()
-
-            .then(() => {
-
-                musicPlaying = true;
-
-            })
-
-            .catch(() => {
-
-                musicPlaying = false;
-
-            });
+            playMusic();
 
 
-        /* REMOVE OPENING SCREEN */
+            /*
+             * Opening screen hide
+             */
 
-        setTimeout(() => {
+            openingScreen.classList.add(
+                "hide"
+            );
 
-            openingScreen.style.display =
-                "none";
 
-        }, 1000);
+            setTimeout(() => {
 
-    }
-);
+                openingScreen.style.display =
+                    "none";
+
+            }, 1000);
+
+        }
+    );
+
+}
 
 
 /* =========================
    MUSIC BUTTON
 ========================= */
 
-musicBtn.addEventListener(
-    "click",
-    function () {
+if (
+    musicBtn &&
+    backgroundMusic
+) {
+
+    musicBtn.addEventListener(
+        "click",
+        function () {
 
 
-        if (musicPlaying) {
+            /*
+             * Video चालू असल्यास
+             * music manually सुरू करू नये.
+             */
 
-            backgroundMusic.pause();
+            if (
+                weddingVideo &&
+                !weddingVideo.paused &&
+                !weddingVideo.ended
+            ) {
 
-            musicPlaying = false;
+                return;
 
-            musicBtn.innerText = "♫";
+            }
+
+
+            if (musicPlaying) {
+
+                pauseMusic();
+
+            }
+
+            else {
+
+                playMusic();
+
+            }
 
         }
+    );
 
-        else {
+}
 
-            backgroundMusic.play()
 
-                .then(() => {
+/* =========================
+   VIDEO PLAY
+   MUSIC OFF
+========================= */
 
-                    musicPlaying = true;
+if (weddingVideo) {
 
-                    musicBtn.innerText = "♫";
+    weddingVideo.addEventListener(
+        "play",
+        function () {
 
-                })
+            /*
+             * Video सुरू = Music OFF
+             */
 
-                .catch(() => {
+            pauseMusic();
 
-                    musicPlaying = false;
-
-                });
+            musicPausedByVideo =
+                true;
 
         }
+    );
 
-    }
-);
+
+    /* =========================
+       VIDEO PAUSE
+    ========================== */
+
+    weddingVideo.addEventListener(
+        "pause",
+        function () {
+
+            /*
+             * Video pause = Music ON
+             */
+
+            if (
+                musicPausedByVideo &&
+                !weddingVideo.ended
+            ) {
+
+                playMusic();
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       VIDEO END
+    ========================== */
+
+    weddingVideo.addEventListener(
+        "ended",
+        function () {
+
+            /*
+             * Video पूर्ण = Music ON
+             */
+
+            musicPausedByVideo =
+                false;
+
+            playMusic();
+
+        }
+    );
+
+}

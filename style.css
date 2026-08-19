@@ -10,17 +10,17 @@
 
 :root {
 
-    --maroon: #681025;
+    --maroon: #651225;
 
-    --deep-maroon: #25050c;
+    --deep-maroon: #300710;
 
     --gold: #caa04f;
 
-    --light-gold: #ead19a;
+    --light-gold: #e6ca8d;
 
     --cream: #f5ede0;
 
-    --paper: #fffaf2;
+    --paper: #fffaf1;
 
     --text: #4b1823;
 
@@ -40,16 +40,35 @@ body {
         "Noto Serif Devanagari",
         serif;
 
-    background: var(--cream);
-
-    color: var(--text);
+    color:
+        var(--text);
 
     overflow-x: hidden;
+
+    background-color:
+        var(--cream);
+
+    background-image:
+
+        linear-gradient(
+            rgba(255, 250, 241, 0.82),
+            rgba(255, 250, 241, 0.82)
+        ),
+
+        url("assets/images/background.jpg");
+
+    background-size:
+        cover;
+
+    background-attachment:
+        fixed;
 
 }
 
 
-/* OPENING SCREEN */
+/* =========================
+   OPENING SCREEN
+========================= */
 
 .opening-screen {
 
@@ -59,8 +78,6 @@ body {
 
     z-index: 9999;
 
-    min-height: 100vh;
-
     display: flex;
 
     align-items: center;
@@ -69,24 +86,53 @@ body {
 
     text-align: center;
 
-    background-image:
+    overflow: auto;
+
+    padding: 20px;
+
+    background:
+
+        linear-gradient(
+            rgba(48, 7, 16, 0.94),
+            rgba(101, 18, 37, 0.94)
+        ),
+
         url("assets/images/background.jpg");
 
-    background-size: cover;
+    background-size:
+        cover;
 
-    background-position: center;
+    background-position:
+        center;
+
+    transition:
+        opacity
+        0.8s
+        ease;
 
 }
 
 
-.opening-overlay {
+.opening-screen.hide {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+.opening-border {
 
     position: absolute;
 
-    inset: 0;
+    inset: 15px;
 
-    background:
-        rgba(40, 5, 12, 0.82);
+    border:
+        1px solid
+        rgba(202, 160, 79, 0.6);
+
+    pointer-events: none;
 
 }
 
@@ -97,533 +143,779 @@ body {
 
     z-index: 2;
 
-    padding: 30px 20px;
+    width: 100%;
+
+    max-width: 600px;
 
 }
 
 
 .opening-logo {
 
-    width: 100px;
+    position: absolute;
 
-    max-width: 35vw;
+    top: 25px;
 
-    margin-bottom: 12px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 105px;
+
+    height: 105px;
+
+    object-fit:
+        contain;
+
+    border-radius:
+        50%;
 
 }
 
 
 .ganesh-mantra {
 
-    color: var(--light-gold);
+    color:
+        var(--light-gold);
 
-    font-size: 18px;
+    font-size:
+        18px;
 
-    margin-bottom: 8px;
+}
+
+
+.gold-divider {
+
+    width: 120px;
+
+    height: 1px;
+
+    margin:
+        15px auto;
+
+    background:
+
+        linear-gradient(
+            to right,
+            transparent,
+            var(--gold),
+            transparent
+        );
+
+}
+
+
+.blessing-text {
+
+    margin-top:
+        10px;
+
+    color:
+        var(--light-gold);
 
 }
 
 
 .opening-names {
 
-    color: #fff5df;
+    margin-top:
+        10px;
+
+    color:
+        #fff4dc;
 
     font-family:
         "Tiro Devanagari Marathi",
         serif;
 
     font-size:
-        clamp(42px, 9vw, 70px);
+        clamp(40px, 8vw, 68px);
 
-    line-height: 1.2;
+    font-weight:
+        400;
 
-    font-weight: 400;
+    line-height:
+        1.25;
 
 }
 
 
 .opening-names span {
 
-    display: block;
+    display:
+        block;
 
-    color: var(--gold);
+    color:
+        var(--gold);
 
-    font-size: 22px;
+    font-size:
+        24px;
 
 }
 
 
 .opening-event {
 
-    margin-top: 10px;
+    margin-top:
+        12px;
 
-    color: var(--light-gold);
+    color:
+        var(--light-gold);
 
-    font-size: 20px;
+    font-size:
+        19px;
 
 }
 
 
 .opening-date {
 
-    margin-top: 4px;
+    margin-top:
+        7px;
 
-    color: #fff1d7;
-
-    font-size: 16px;
+    color:
+        #f5e7cd;
 
 }
 
 
 .open-button {
 
-    margin-top: 22px;
+    margin-top:
+        25px;
 
-    padding: 12px 32px;
-
-    background: transparent;
+    padding:
+        13px 35px;
 
     border:
-        1px solid var(--gold);
+        1px solid
+        var(--gold);
 
-    color: var(--light-gold);
+    background:
+        rgba(0, 0, 0, 0.1);
+
+    color:
+        #fff2d7;
 
     font-family:
         "Noto Serif Devanagari",
         serif;
 
-    font-size: 17px;
+    font-size:
+        17px;
 
-    cursor: pointer;
-
-    transition: 0.3s;
-
-}
-
-
-.open-button:hover {
-
-    background: var(--gold);
-
-    color: var(--deep-maroon);
+    cursor:
+        pointer;
 
 }
 
 
-.opening-screen.hide {
+.open-button:active {
 
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition:
-        opacity 0.8s ease,
-        visibility 0.8s ease;
+    transform:
+        scale(0.97);
 
 }
 
 
-/* MAIN WEBSITE */
+/* =========================
+   MAIN WEBSITE
+========================= */
 
 .main-website {
 
-    display: none;
+    display:
+        none;
 
 }
 
 
 .main-website.show {
 
-    display: block;
+    display:
+        block;
+
+    animation:
+        fadeIn
+        0.7s
+        ease;
 
 }
 
 
-/* MUSIC BUTTON */
+@keyframes fadeIn {
+
+    from {
+
+        opacity:
+            0;
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
 
 .music-btn {
 
-    position: fixed;
+    position:
+        fixed;
 
-    top: 15px;
+    top:
+        15px;
 
-    right: 15px;
+    right:
+        15px;
 
-    z-index: 1000;
+    width:
+        52px;
 
-    width: 45px;
+    height:
+        52px;
 
-    height: 45px;
+    z-index:
+        5000;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     border:
-        1px solid var(--gold);
+        1px solid
+        var(--gold);
 
     background:
-        rgba(50, 7, 16, 0.92);
+        rgba(48, 7, 16, 0.92);
 
-    color: var(--light-gold);
-
-    font-size: 23px;
-
-    cursor: pointer;
+    cursor:
+        pointer;
 
 }
 
 
-/* HERO */
+.music-bars {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        3px;
+
+}
+
+
+.music-bars i {
+
+    display:
+        block;
+
+    width:
+        3px;
+
+    height:
+        10px;
+
+    background:
+        var(--light-gold);
+
+}
+
+
+.music-btn.playing
+.music-bars i {
+
+    animation:
+        musicWave
+        0.7s
+        infinite
+        alternate;
+
+}
+
+
+.music-btn.playing
+.music-bars i:nth-child(2) {
+
+    animation-delay:
+        0.2s;
+
+}
+
+
+.music-btn.playing
+.music-bars i:nth-child(3) {
+
+    animation-delay:
+        0.4s;
+
+}
+
+
+@keyframes musicWave {
+
+    from {
+
+        height:
+            7px;
+
+    }
+
+    to {
+
+        height:
+            22px;
+
+    }
+
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero-section {
 
-    position: relative;
+    position:
+        relative;
 
-    min-height: 100vh;
+    min-height:
+        100vh;
 
-    display: flex;
+    padding:
+        80px 20px 55px;
 
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 55px 20px 35px;
-
-    background-image:
-        url("assets/images/background.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-}
-
-
-.hero-overlay {
-
-    position: absolute;
-
-    inset: 0;
+    text-align:
+        center;
 
     background:
-        rgba(55, 6, 18, 0.80);
+
+        linear-gradient(
+            rgba(78, 15, 30, 0.88),
+            rgba(48, 7, 16, 0.92)
+        ),
+
+        url("assets/images/background.jpg");
+
+    background-size:
+        cover;
+
+    background-position:
+        center;
 
 }
 
 
-.hero-content {
+.hero-border {
 
-    position: relative;
+    position:
+        absolute;
 
-    z-index: 2;
+    inset:
+        14px;
 
-    width: 100%;
+    border:
+        1px solid
+        rgba(202, 160, 79, 0.45);
 
-    max-width: 700px;
+    pointer-events:
+        none;
+
+}
+
+
+.hero-inner {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        700px;
+
+    margin:
+        auto;
 
 }
 
 
 .hero-logo {
 
-    width: 75px;
+    width:
+        100px;
 
-    margin-bottom: 8px;
+    height:
+        100px;
+
+    object-fit:
+        contain;
+
+    border-radius:
+        50%;
+
+    margin-bottom:
+        10px;
 
 }
 
 
 .hero-ganesh {
 
-    color: var(--light-gold);
-
-    font-size: 17px;
+    color:
+        var(--light-gold);
 
 }
 
 
 .hero-subtitle {
 
-    margin-top: 12px;
+    margin-top:
+        14px;
 
-    color: var(--gold);
+    color:
+        #d9bd7b;
 
-    font-size: 18px;
+    font-size:
+        17px;
 
 }
 
 
 .couple-names {
 
-    margin-top: 8px;
+    margin-top:
+        10px;
 
-    color: #fff4df;
+    color:
+        #fff4df;
 
     font-family:
         "Tiro Devanagari Marathi",
         serif;
 
     font-size:
-        clamp(48px, 10vw, 85px);
+        clamp(48px, 9vw, 90px);
 
-    font-weight: 400;
+    line-height:
+        1.2;
 
-    line-height: 1.2;
+    font-weight:
+        400;
 
 }
 
 
 .couple-names span {
 
-    display: block;
+    display:
+        block;
 
-    color: var(--gold);
+    color:
+        var(--gold);
 
-    font-size: 22px;
+    font-size:
+        23px;
 
 }
 
 
-.gold-line {
+.ornament-line {
 
-    margin: 12px 0;
+    display:
+        flex;
 
-    color: var(--gold);
+    align-items:
+        center;
 
-    font-size: 22px;
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    margin:
+        16px 0;
+
+}
+
+
+.ornament-line span {
+
+    width:
+        80px;
+
+    height:
+        1px;
+
+    background:
+        var(--gold);
+
+}
+
+
+.ornament-line b {
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    background:
+        var(--gold);
+
+    transform:
+        rotate(45deg);
 
 }
 
 
 .hero-event {
 
-    color: var(--light-gold);
+    color:
+        var(--light-gold);
 
-    font-size: 20px;
+    font-size:
+        21px;
 
 }
 
 
 .hero-date {
 
-    margin-top: 5px;
+    margin-top:
+        5px;
 
-    color: #fff2da;
+    color:
+        #fff1d7;
 
 }
 
 
-/* VIDEO */
+/* =========================
+   VIDEO
+========================= */
+
+.video-wrapper {
+
+    margin:
+        22px auto 18px;
+
+    width:
+        100%;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+}
+
 
 .video-container {
 
-    width: min(360px, 90vw);
+    width:
+        min(360px, 100%);
 
-    aspect-ratio: 9 / 16;
+    aspect-ratio:
+        9 / 16;
 
-    margin: 22px auto 10px;
+    overflow:
+        hidden;
 
-    overflow: hidden;
+    background:
+        #000;
 
     border:
-        1px solid rgba(202, 160, 79, 0.8);
-
-    background: #000;
-
-    box-shadow:
-        0 15px 40px
-        rgba(0, 0, 0, 0.45);
-
-}
-
-
-.video-container iframe {
-
-    width: 100%;
-
-    height: 100%;
-
-    border: none;
-
-    display: block;
+        1px solid
+        rgba(202, 160, 79, 0.8);
 
 }
 
 
 .video-container video {
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 100%;
+    height:
+        100%;
 
-    display: block;
+    display:
+        block;
 
-    object-fit: cover;
+    object-fit:
+        cover;
 
-}
-
-
-.scroll-text {
-
-    margin-top: 18px;
-
-    color: var(--light-gold);
-
-    font-size: 13px;
+    background:
+        #000;
 
 }
 
 
-/* COMMON SECTION */
+/* =========================
+   INVITATION TEXT
+========================= */
+
+.invitation-text {
+
+    max-width:
+        520px;
+
+    margin:
+        18px auto 0;
+
+    color:
+        #f3dfb6;
+
+    line-height:
+        1.9;
+
+    font-size:
+        15px;
+
+}
+
+
+.scroll-down {
+
+    margin-top:
+        25px;
+
+    color:
+        #d7ba78;
+
+    font-size:
+        13px;
+
+}
+
+
+/* =========================
+   COMMON SECTION
+========================= */
 
 section {
 
-    padding: 50px 20px;
+    padding:
+        60px 20px;
 
 }
 
 
-.section-heading {
+.section-title {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 12px;
+    gap:
+        12px;
 
-    margin-bottom: 28px;
-
-    text-align: center;
+    margin-bottom:
+        30px;
 
 }
 
 
-.section-heading h2 {
+.section-title h2 {
 
-    color: var(--maroon);
+    color:
+        var(--maroon);
 
     font-family:
         "Tiro Devanagari Marathi",
         serif;
 
     font-size:
-        clamp(30px, 6vw, 46px);
+        clamp(32px, 5vw, 50px);
 
-    font-weight: 400;
-
-}
-
-
-.section-heading span {
-
-    width: 55px;
-
-    height: 1px;
-
-    background: var(--gold);
+    font-weight:
+        400;
 
 }
 
 
-/* PRE WEDDING */
+.title-line {
 
-.pre-wedding-section {
+    width:
+        65px;
 
-    background: var(--cream);
+    height:
+        1px;
 
-}
-
-
-.pre-wedding-card {
-
-    max-width: 650px;
-
-    margin: auto;
-
-    padding: 24px 20px;
-
-    text-align: center;
-
-    background: var(--paper);
-
-    border:
-        1px solid
-        rgba(202, 160, 79, 0.65);
+    background:
+        var(--gold);
 
 }
 
 
-.pre-wedding-card p {
-
-    margin: 6px 0;
-
-    line-height: 1.7;
-
-}
-
-
-#preWeddingDate {
-
-    font-size: 19px;
-
-    color: var(--maroon);
-
-}
-
-
-#preWeddingTime {
-
-    color: var(--gold);
-
-    font-size: 20px;
-
-}
-
-
-#preWeddingVenue {
-
-    font-size: 17px;
-
-}
-
-
-/* DETAILS */
+/* =========================
+   DETAILS
+========================= */
 
 .details-section {
 
-    background: var(--paper);
+    background:
+        rgba(255, 250, 241, 0.88);
 
 }
 
 
 .details-wrapper {
 
-    max-width: 1100px;
+    max-width:
+        1100px;
 
-    margin: auto;
+    margin:
+        auto;
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 18px;
+    gap:
+        18px;
 
 }
 
 
 .detail-card {
 
-    padding: 25px 18px;
+    text-align:
+        center;
 
-    min-height: 170px;
+    padding:
+        28px 18px;
 
-    text-align: center;
-
-    background: #fffdf8;
+    background:
+        rgba(255, 253, 248, 0.92);
 
     border:
         1px solid
@@ -634,90 +926,161 @@ section {
 
 .detail-label {
 
-    color: var(--gold);
+    color:
+        var(--gold);
 
 }
 
 
 .detail-card h3 {
 
-    margin-top: 12px;
+    margin-top:
+        12px;
 
-    color: var(--maroon);
+    color:
+        var(--maroon);
 
-    font-size: 22px;
-
-    font-weight: 500;
+    font-size:
+        22px;
 
 }
 
 
 .detail-card p {
 
-    margin-top: 6px;
+    margin-top:
+        7px;
 
-    line-height: 1.6;
-
-}
-
-
-.venue-card h3 {
-
-    font-size: 19px;
+    line-height:
+        1.7;
 
 }
 
 
 .map-button {
 
-    display: inline-block;
+    display:
+        inline-block;
 
-    margin-top: 14px;
+    margin-top:
+        15px;
 
-    padding: 8px 20px;
-
-    text-decoration: none;
-
-    color: var(--maroon);
+    padding:
+        9px 22px;
 
     border:
-        1px solid var(--gold);
+        1px solid
+        var(--gold);
+
+    color:
+        var(--maroon);
+
+    text-decoration:
+        none;
 
 }
 
 
-/* FAMILY */
+/* =========================
+   EXTRA EVENT
+========================= */
+
+.extra-event-section {
+
+    background:
+        rgba(245, 237, 224, 0.92);
+
+}
+
+
+.extra-event-card {
+
+    max-width:
+        700px;
+
+    margin:
+        auto;
+
+    padding:
+        22px 15px;
+
+    text-align:
+        center;
+
+    color:
+        var(--maroon);
+
+    border:
+        1px solid
+        rgba(202, 160, 79, 0.65);
+
+    background:
+        rgba(255, 250, 241, 0.85);
+
+}
+
+
+/*
+   IMPORTANT:
+   \n मुळे 3 lines
+*/
+
+.extra-event-card p {
+
+    white-space:
+        pre-line;
+
+    font-size:
+        clamp(14px, 2vw, 18px);
+
+    line-height:
+        2;
+
+}
+
+
+/* =========================
+   FAMILY
+========================= */
 
 .family-section {
 
-    background: var(--cream);
+    background:
+        rgba(255, 250, 241, 0.86);
 
 }
 
 
 .family-wrapper {
 
-    max-width: 1000px;
+    max-width:
+        1000px;
 
-    margin: auto;
+    margin:
+        auto;
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 20px;
+    gap:
+        20px;
 
 }
 
 
 .family-card {
 
-    padding: 25px 20px;
+    padding:
+        28px 22px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    background: var(--paper);
+    background:
+        rgba(255, 253, 248, 0.92);
 
     border:
         1px solid
@@ -726,198 +1089,252 @@ section {
 }
 
 
-.family-card h3 {
+.family-heading {
 
-    display: inline-block;
+    color:
+        var(--maroon);
 
-    margin-bottom: 12px;
+    margin-bottom:
+        15px;
 
-    padding-bottom: 6px;
-
-    color: var(--maroon);
-
-    border-bottom:
-        1px solid var(--gold);
+    font-size:
+        25px;
 
 }
 
 
 .family-member {
 
-    padding: 8px 4px;
+    padding:
+        10px 4px;
 
-    line-height: 1.6;
+    line-height:
+        1.7;
 
     border-bottom:
         1px solid
-        rgba(101, 18, 37, 0.1);
+        rgba(101, 18, 37, 0.08);
 
 }
 
 
-.family-member:last-child {
-
-    border-bottom: none;
-
-}
-
-
-/* INVITERS */
+/* =========================
+   INVITERS
+========================= */
 
 .inviter-section {
 
     background:
+
         linear-gradient(
-            135deg,
-            #681025,
-            #28050c
+            rgba(104, 16, 37, 0.94),
+            rgba(50, 6, 16, 0.95)
         );
 
 }
 
 
-.light-heading h2 {
+.light-title h2 {
 
-    color: #fff3dc;
+    color:
+        #fff2d9;
 
 }
 
 
 .inviters-list {
 
-    max-width: 900px;
+    max-width:
+        900px;
 
-    margin: auto;
+    margin:
+        auto;
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 12px;
+    gap:
+        14px;
 
 }
 
 
 .inviter-item {
 
-    padding: 14px;
+    padding:
+        15px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    color: #fff0d7;
+    color:
+        #f7e9d0;
 
     border:
         1px solid
         rgba(202, 160, 79, 0.4);
 
-    line-height: 1.6;
-
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
 
-    padding: 40px 20px;
+    padding:
+        45px 20px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    background: #23050b;
-
-    color: #f7e8d0;
+    background:
+        #24050c;
 
 }
 
 
 .footer-logo {
 
-    width: 70px;
+    width:
+        100px;
 
-    margin-bottom: 15px;
+    height:
+        100px;
+
+    object-fit:
+        contain;
+
+    border-radius:
+        50%;
 
 }
 
 
-footer p {
+.footer-text {
 
-    max-width: 500px;
+    margin-top:
+        15px;
 
-    margin: auto;
+    color:
+        var(--light-gold);
 
-    line-height: 1.8;
+}
+
+
+.footer-divider {
+
+    width:
+        150px;
+
+    height:
+        1px;
+
+    margin:
+        20px auto;
+
+    background:
+        var(--gold);
 
 }
 
 
 .instagram-link {
 
-    display: inline-block;
+    color:
+        #f7e7c7;
 
-    margin-top: 20px;
-
-    padding: 9px 20px;
-
-    color: var(--light-gold);
-
-    text-decoration: none;
-
-    border:
-        1px solid var(--gold);
+    text-decoration:
+        none;
 
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 800px) {
-
-    section {
-
-        padding: 40px 15px;
-
-    }
-
-
-    .hero-section {
-
-        padding: 45px 15px 30px;
-
-    }
 
 
     .details-wrapper {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
     }
 
 
     .family-wrapper {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
     }
 
 
     .inviters-list {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .opening-logo {
+
+        width:
+            80px;
+
+        height:
+            80px;
+
+        top:
+            20px;
 
     }
 
 
     .video-container {
 
-        width: min(330px, 92vw);
+        width:
+            min(340px, 100%);
 
     }
 
 
-    .section-heading span {
+    .hero-section {
 
-        width: 35px;
+        padding-top:
+            90px;
+
+    }
+
+
+    /* EXTRA EVENT */
+
+    .extra-event-card {
+
+        width:
+            100%;
+
+        padding:
+            18px 8px;
+
+    }
+
+
+    .extra-event-card p {
+
+        font-size:
+            clamp(13px, 3.8vw, 17px);
+
+        line-height:
+            1.9;
 
     }
 
