@@ -1,21 +1,26 @@
 * {
+
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
 
 :root {
 
-    --maroon: #651225;
-    --deep-maroon: #300710;
-    --wine: #851b32;
+    --maroon: #681025;
+
+    --deep-maroon: #25050c;
 
     --gold: #caa04f;
-    --light-gold: #e6ca8d;
+
+    --light-gold: #ead19a;
 
     --cream: #f5ede0;
-    --paper: #fffaf1;
+
+    --paper: #fffaf2;
 
     --text: #4b1823;
 
@@ -44,9 +49,7 @@ body {
 }
 
 
-/* =========================
-   OPENING SCREEN
-========================= */
+/* OPENING SCREEN */
 
 .opening-screen {
 
@@ -54,11 +57,9 @@ body {
 
     inset: 0;
 
-    min-height: 100vh;
-
-    width: 100%;
-
     z-index: 9999;
+
+    min-height: 100vh;
 
     display: flex;
 
@@ -66,95 +67,26 @@ body {
 
     justify-content: center;
 
-    overflow: hidden;
+    text-align: center;
 
-    padding: 20px;
+    background-image:
+        url("assets/images/background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+.opening-overlay {
+
+    position: absolute;
+
+    inset: 0;
 
     background:
-
-        radial-gradient(
-            circle at center,
-            #7d1830,
-            var(--deep-maroon)
-        );
-
-}
-
-
-.opening-border {
-
-    position: absolute;
-
-    inset: 18px;
-
-    border:
-        1px solid
-        rgba(202, 160, 79, 0.6);
-
-}
-
-
-.opening-border::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 8px;
-
-    border:
-        1px solid
-        rgba(202, 160, 79, 0.2);
-
-}
-
-
-.opening-pattern {
-
-    position: absolute;
-
-    width: 430px;
-
-    height: 430px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(202, 160, 79, 0.1);
-
-}
-
-
-.opening-pattern::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 45px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(202, 160, 79, 0.1);
-
-}
-
-
-.pattern-one {
-
-    top: -200px;
-    left: -180px;
-
-}
-
-
-.pattern-two {
-
-    right: -200px;
-    bottom: -200px;
+        rgba(40, 5, 12, 0.82);
 
 }
 
@@ -165,40 +97,18 @@ body {
 
     z-index: 2;
 
-    width: min(620px, 100%);
-
-    text-align: center;
-
     padding: 30px 20px;
-
-    animation:
-        openingEntry
-        1s
-        ease
-        forwards;
 
 }
 
 
-@keyframes openingEntry {
+.opening-logo {
 
-    from {
+    width: 100px;
 
-        opacity: 0;
+    max-width: 35vw;
 
-        transform:
-            translateY(25px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
+    margin-bottom: 12px;
 
 }
 
@@ -209,98 +119,25 @@ body {
 
     font-size: 18px;
 
-}
-
-
-.gold-divider {
-
-    width: 120px;
-
-    height: 1px;
-
-    margin: 14px auto 22px;
-
-    background:
-
-        linear-gradient(
-            to right,
-            transparent,
-            var(--gold),
-            transparent
-        );
-
-}
-
-
-.ganpati-frame {
-
-    width: 210px;
-
-    height: 210px;
-
-    margin: auto;
-
-    padding: 7px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        var(--gold);
-
-    box-shadow:
-
-        0 0 0 7px
-        rgba(202, 160, 79, 0.08),
-
-        0 20px 50px
-        rgba(0, 0, 0, 0.35);
-
-}
-
-
-.ganpati-image {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    display: block;
-
-}
-
-
-.blessing-text {
-
-    margin-top: 20px;
-
-    color: var(--light-gold);
-
-    font-size: 16px;
+    margin-bottom: 8px;
 
 }
 
 
 .opening-names {
 
-    margin-top: 8px;
-
-    color: #fff4dc;
+    color: #fff5df;
 
     font-family:
         "Tiro Devanagari Marathi",
         serif;
 
     font-size:
-        clamp(40px, 8vw, 66px);
+        clamp(42px, 9vw, 70px);
+
+    line-height: 1.2;
 
     font-weight: 400;
-
-    line-height: 1.25;
 
 }
 
@@ -313,27 +150,25 @@ body {
 
     font-size: 22px;
 
-    margin: 2px 0;
-
 }
 
 
 .opening-event {
 
-    color: var(--light-gold);
-
     margin-top: 10px;
 
-    font-size: 19px;
+    color: var(--light-gold);
+
+    font-size: 20px;
 
 }
 
 
 .opening-date {
 
-    color: #f5e7cd;
+    margin-top: 4px;
 
-    margin-top: 8px;
+    color: #fff1d7;
 
     font-size: 16px;
 
@@ -342,18 +177,16 @@ body {
 
 .open-button {
 
-    margin-top: 24px;
+    margin-top: 22px;
 
-    padding: 12px 34px;
+    padding: 12px 32px;
 
-    background:
-        transparent;
+    background: transparent;
 
     border:
-        1px solid
-        var(--gold);
+        1px solid var(--gold);
 
-    color: #f7dfaa;
+    color: var(--light-gold);
 
     font-family:
         "Noto Serif Devanagari",
@@ -363,8 +196,7 @@ body {
 
     cursor: pointer;
 
-    transition:
-        0.35s ease;
+    transition: 0.3s;
 
 }
 
@@ -378,117 +210,20 @@ body {
 }
 
 
-/* OPENING EXIT */
-
 .opening-screen.hide {
 
-    animation:
-        openingExit
-        1.2s
-        ease
-        forwards;
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
 
 }
 
 
-@keyframes openingExit {
-
-    to {
-
-        opacity: 0;
-
-        transform:
-            scale(1.05);
-
-        visibility: hidden;
-
-    }
-
-}
-
-
-/* =========================
-   REVEAL EFFECT
-========================= */
-
-.reveal-screen {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 9998;
-
-    pointer-events: none;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-}
-
-
-.reveal-circle {
-
-    width: 0;
-
-    height: 0;
-
-    border-radius: 50%;
-
-    background: var(--cream);
-
-}
-
-
-.reveal-screen.active .reveal-circle {
-
-    animation:
-        revealExpand
-        1.4s
-        ease
-        forwards;
-
-}
-
-
-@keyframes revealExpand {
-
-    0% {
-
-        width: 0;
-        height: 0;
-
-        opacity: 1;
-
-    }
-
-    70% {
-
-        width: 250vmax;
-        height: 250vmax;
-
-        opacity: 1;
-
-    }
-
-    100% {
-
-        width: 250vmax;
-        height: 250vmax;
-
-        opacity: 0;
-
-    }
-
-}
-
-
-/* =========================
-   MAIN WEBSITE
-========================= */
+/* MAIN WEBSITE */
 
 .main-website {
 
@@ -501,140 +236,49 @@ body {
 
     display: block;
 
-    animation:
-        mainFade
-        0.8s
-        ease;
-
 }
 
 
-@keyframes mainFade {
-
-    from {
-
-        opacity: 0;
-
-    }
-
-    to {
-
-        opacity: 1;
-
-    }
-
-}
-
-
-/* =========================
-   MUSIC BUTTON
-========================= */
+/* MUSIC BUTTON */
 
 .music-btn {
 
     position: fixed;
 
-    top: 18px;
-    right: 18px;
+    top: 15px;
 
-    width: 48px;
-    height: 48px;
+    right: 15px;
 
-    z-index: 500;
+    z-index: 1000;
 
-    display: flex;
+    width: 45px;
 
-    align-items: center;
-    justify-content: center;
+    height: 45px;
 
     border-radius: 50%;
 
     border:
-        1px solid
-        var(--gold);
+        1px solid var(--gold);
 
     background:
-        rgba(48, 7, 16, 0.9);
+        rgba(50, 7, 16, 0.92);
+
+    color: var(--light-gold);
+
+    font-size: 23px;
 
     cursor: pointer;
 
 }
 
 
-.music-bars {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 3px;
-
-}
-
-
-.music-bars i {
-
-    width: 3px;
-
-    height: 10px;
-
-    background: var(--light-gold);
-
-}
-
-
-.music-btn.playing .music-bars i {
-
-    animation:
-        musicWave
-        0.7s
-        ease-in-out
-        infinite
-        alternate;
-
-}
-
-
-.music-btn.playing .music-bars i:nth-child(2) {
-
-    animation-delay: 0.2s;
-
-}
-
-
-.music-btn.playing .music-bars i:nth-child(3) {
-
-    animation-delay: 0.4s;
-
-}
-
-
-@keyframes musicWave {
-
-    from {
-
-        height: 7px;
-
-    }
-
-    to {
-
-        height: 20px;
-
-    }
-
-}
-
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero-section {
 
     position: relative;
 
-    min-height: auto;
+    min-height: 100vh;
 
     display: flex;
 
@@ -644,75 +288,48 @@ body {
 
     text-align: center;
 
-    overflow: hidden;
+    padding: 55px 20px 35px;
 
-    padding: 65px 20px 45px;
+    background-image:
+        url("assets/images/background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
 
     background:
-
-        linear-gradient(
-            135deg,
-            #6c1026,
-            #320710
-        );
+        rgba(55, 6, 18, 0.80);
 
 }
 
 
-.hero-border {
-
-    position: absolute;
-
-    inset: 18px;
-
-    border:
-        1px solid
-        rgba(202, 160, 79, 0.4);
-
-}
-
-
-.hero-pattern {
-
-    position: absolute;
-
-    width: 520px;
-
-    height: 520px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(202, 160, 79, 0.08);
-
-}
-
-
-.hero-pattern::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 60px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(202, 160, 79, 0.08);
-
-}
-
-
-.hero-inner {
+.hero-content {
 
     position: relative;
 
     z-index: 2;
 
-    width: min(1000px, 100%);
+    width: 100%;
+
+    max-width: 700px;
+
+}
+
+
+.hero-logo {
+
+    width: 75px;
+
+    margin-bottom: 8px;
 
 }
 
@@ -728,9 +345,9 @@ body {
 
 .hero-subtitle {
 
-    margin-top: 22px;
+    margin-top: 12px;
 
-    color: #d9bd7b;
+    color: var(--gold);
 
     font-size: 18px;
 
@@ -739,7 +356,7 @@ body {
 
 .couple-names {
 
-    margin-top: 12px;
+    margin-top: 8px;
 
     color: #fff4df;
 
@@ -748,11 +365,11 @@ body {
         serif;
 
     font-size:
-        clamp(50px, 9vw, 100px);
+        clamp(48px, 10vw, 85px);
 
     font-weight: 400;
 
-    line-height: 1.25;
+    line-height: 1.2;
 
 }
 
@@ -763,48 +380,18 @@ body {
 
     color: var(--gold);
 
-    font-size: 24px;
-
-    margin: 2px 0;
+    font-size: 22px;
 
 }
 
 
-.ornament-line {
+.gold-line {
 
-    display: flex;
+    margin: 12px 0;
 
-    align-items: center;
+    color: var(--gold);
 
-    justify-content: center;
-
-    gap: 12px;
-
-    margin: 18px 0;
-
-}
-
-
-.ornament-line span {
-
-    width: 90px;
-
-    height: 1px;
-
-    background: var(--gold);
-
-}
-
-
-.ornament-line b {
-
-    width: 8px;
-
-    height: 8px;
-
-    background: var(--gold);
-
-    transform: rotate(45deg);
+    font-size: 22px;
 
 }
 
@@ -813,52 +400,40 @@ body {
 
     color: var(--light-gold);
 
-    font-size: 21px;
+    font-size: 20px;
 
 }
 
 
 .hero-date {
 
-    margin-top: 6px;
+    margin-top: 5px;
 
-    color: #f7ead2;
-
-    font-size: 17px;
+    color: #fff2da;
 
 }
 
 
-/* =========================
-   YOUTUBE VIDEO
-========================= */
+/* VIDEO */
 
 .video-container {
+
+    width: min(360px, 90vw);
+
+    aspect-ratio: 9 / 16;
+
+    margin: 22px auto 10px;
 
     overflow: hidden;
 
     border:
-        1px solid
-        rgba(202, 160, 79, 0.7);
+        1px solid rgba(202, 160, 79, 0.8);
 
-    background:
-        rgba(0, 0, 0, 0.2);
-
-}
-
-
-.hero-video {
-
-    width: min(560px, 100%);
-
-    aspect-ratio: 16 / 9;
-
-    margin: 25px auto 15px;
+    background: #000;
 
     box-shadow:
-
-        0 20px 50px
-        rgba(0, 0, 0, 0.35);
+        0 15px 40px
+        rgba(0, 0, 0, 0.45);
 
 }
 
@@ -876,59 +451,40 @@ body {
 }
 
 
-.video-placeholder {
+.video-container video {
 
     width: 100%;
 
     height: 100%;
 
-    display: flex;
+    display: block;
 
-    align-items: center;
+    object-fit: cover;
 
-    justify-content: center;
+}
+
+
+.scroll-text {
+
+    margin-top: 18px;
 
     color: var(--light-gold);
 
-}
-
-
-.scroll-down {
-
-    margin-top: 28px;
-
-    color: #d7ba78;
-
-    font-size: 12px;
+    font-size: 13px;
 
 }
 
 
-.scroll-line {
-
-    width: 1px;
-
-    height: 32px;
-
-    margin: 10px auto 0;
-
-    background: var(--gold);
-
-}
-
-
-/* =========================
-   COMMON SECTION
-========================= */
+/* COMMON SECTION */
 
 section {
 
-    padding: 65px 20px;
+    padding: 50px 20px;
 
 }
 
 
-.section-title {
+.section-heading {
 
     display: flex;
 
@@ -936,14 +492,16 @@ section {
 
     justify-content: center;
 
-    gap: 15px;
+    gap: 12px;
 
-    margin-bottom: 35px;
+    margin-bottom: 28px;
+
+    text-align: center;
 
 }
 
 
-.section-title h2 {
+.section-heading h2 {
 
     color: var(--maroon);
 
@@ -952,46 +510,87 @@ section {
         serif;
 
     font-size:
-        clamp(34px, 5vw, 52px);
+        clamp(30px, 6vw, 46px);
 
     font-weight: 400;
 
 }
 
 
-.title-line {
+.section-heading span {
 
-    width: 75px;
+    width: 55px;
 
     height: 1px;
 
-    background:
-
-        linear-gradient(
-            to right,
-            transparent,
-            var(--gold)
-        );
+    background: var(--gold);
 
 }
 
 
-.title-line:last-child {
+/* PRE WEDDING */
 
-    background:
+.pre-wedding-section {
 
-        linear-gradient(
-            to left,
-            transparent,
-            var(--gold)
-        );
+    background: var(--cream);
 
 }
 
 
-/* =========================
-   DETAILS
-========================= */
+.pre-wedding-card {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    padding: 24px 20px;
+
+    text-align: center;
+
+    background: var(--paper);
+
+    border:
+        1px solid
+        rgba(202, 160, 79, 0.65);
+
+}
+
+
+.pre-wedding-card p {
+
+    margin: 6px 0;
+
+    line-height: 1.7;
+
+}
+
+
+#preWeddingDate {
+
+    font-size: 19px;
+
+    color: var(--maroon);
+
+}
+
+
+#preWeddingTime {
+
+    color: var(--gold);
+
+    font-size: 20px;
+
+}
+
+
+#preWeddingVenue {
+
+    font-size: 17px;
+
+}
+
+
+/* DETAILS */
 
 .details-section {
 
@@ -1011,20 +610,18 @@ section {
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 20px;
+    gap: 18px;
 
 }
 
 
 .detail-card {
 
-    min-height: 190px;
+    padding: 25px 18px;
 
-    position: relative;
+    min-height: 170px;
 
     text-align: center;
-
-    padding: 28px 20px;
 
     background: #fffdf8;
 
@@ -1035,57 +632,38 @@ section {
 }
 
 
-.detail-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 7px;
-
-    border:
-        1px solid
-        rgba(202, 160, 79, 0.12);
-
-    pointer-events: none;
-
-}
-
-
 .detail-label {
 
     color: var(--gold);
-
-    font-size: 16px;
 
 }
 
 
 .detail-card h3 {
 
-    margin-top: 14px;
+    margin-top: 12px;
 
     color: var(--maroon);
 
-    font-size: 24px;
+    font-size: 22px;
 
     font-weight: 500;
 
 }
 
 
-.detail-card p:not(.detail-label) {
+.detail-card p {
 
-    margin-top: 7px;
+    margin-top: 6px;
 
-    line-height: 1.7;
+    line-height: 1.6;
 
 }
 
 
 .venue-card h3 {
 
-    font-size: 20px;
+    font-size: 19px;
 
 }
 
@@ -1094,36 +672,21 @@ section {
 
     display: inline-block;
 
-    margin-top: 18px;
+    margin-top: 14px;
 
-    padding: 9px 24px;
+    padding: 8px 20px;
 
     text-decoration: none;
 
     color: var(--maroon);
 
     border:
-        1px solid
-        var(--gold);
-
-    transition:
-        0.3s ease;
+        1px solid var(--gold);
 
 }
 
 
-.map-button:hover {
-
-    background: var(--maroon);
-
-    color: white;
-
-}
-
-
-/* =========================
-   FAMILY
-========================= */
+/* FAMILY */
 
 .family-section {
 
@@ -1143,14 +706,14 @@ section {
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 25px;
+    gap: 20px;
 
 }
 
 
 .family-card {
 
-    padding: 30px 25px;
+    padding: 25px 20px;
 
     text-align: center;
 
@@ -1163,36 +726,31 @@ section {
 }
 
 
-.family-heading {
+.family-card h3 {
 
     display: inline-block;
 
-    padding-bottom: 8px;
+    margin-bottom: 12px;
 
-    margin-bottom: 15px;
+    padding-bottom: 6px;
 
     color: var(--maroon);
 
-    font-size: 27px;
-
-    font-weight: 500;
-
     border-bottom:
-        1px solid
-        var(--gold);
+        1px solid var(--gold);
 
 }
 
 
 .family-member {
 
-    padding: 10px 5px;
+    padding: 8px 4px;
 
-    line-height: 1.7;
+    line-height: 1.6;
 
     border-bottom:
         1px solid
-        rgba(101, 18, 37, 0.08);
+        rgba(101, 18, 37, 0.1);
 
 }
 
@@ -1204,180 +762,127 @@ section {
 }
 
 
-/* =========================
-   INVITERS
-========================= */
+/* INVITERS */
 
 .inviter-section {
 
     background:
-
         linear-gradient(
             135deg,
             #681025,
-            #320610
+            #28050c
         );
 
 }
 
 
-.light-title h2 {
+.light-heading h2 {
 
-    color: #fff2d9;
-
-}
-
-
-.inviter-inner {
-
-    max-width: 1000px;
-
-    margin: auto;
+    color: #fff3dc;
 
 }
 
 
 .inviters-list {
 
+    max-width: 900px;
+
+    margin: auto;
+
     display: grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 15px;
+    gap: 12px;
 
 }
 
 
 .inviter-item {
 
-    padding: 16px;
+    padding: 14px;
 
     text-align: center;
 
-    line-height: 1.7;
-
-    color: #f7e9d0;
+    color: #fff0d7;
 
     border:
         1px solid
         rgba(202, 160, 79, 0.4);
 
-    background:
-        rgba(255, 255, 255, 0.03);
+    line-height: 1.6;
 
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
 
-    padding: 55px 20px;
+    padding: 40px 20px;
 
     text-align: center;
 
-    background: #24050c;
+    background: #23050b;
 
-    color: #f7e7c7;
+    color: #f7e8d0;
 
 }
 
 
-footer h2 {
+.footer-logo {
 
-    margin-top: 15px;
+    width: 70px;
 
-    font-family:
-        "Tiro Devanagari Marathi",
-        serif;
-
-    font-size:
-        clamp(38px, 7vw, 65px);
-
-    font-weight: 400;
+    margin-bottom: 15px;
 
 }
 
 
 footer p {
 
-    margin-top: 10px;
-
-    color: var(--light-gold);
-
-}
-
-
-.footer-divider {
-
-    width: 160px;
-
-    height: 1px;
+    max-width: 500px;
 
     margin: auto;
 
-    background:
-
-        linear-gradient(
-            to right,
-            transparent,
-            var(--gold),
-            transparent
-        );
+    line-height: 1.8;
 
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+.instagram-link {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 9px 20px;
+
+    color: var(--light-gold);
+
+    text-decoration: none;
+
+    border:
+        1px solid var(--gold);
+
+}
+
+
+/* MOBILE */
 
 @media (max-width: 800px) {
 
     section {
 
-        padding: 50px 16px;
-
-    }
-
-
-    .opening-content {
-
-        padding: 20px 10px;
-
-    }
-
-
-    .ganpati-frame {
-
-        width: 180px;
-
-        height: 180px;
-
-    }
-
-
-    .opening-names {
-
-        font-size:
-            clamp(38px, 12vw, 58px);
+        padding: 40px 15px;
 
     }
 
 
     .hero-section {
 
-        padding: 55px 16px 35px;
-
-    }
-
-
-    .hero-border {
-
-        inset: 10px;
+        padding: 45px 15px 30px;
 
     }
 
@@ -1403,36 +908,16 @@ footer p {
     }
 
 
-    .title-line {
+    .video-container {
 
-        width: 40px;
-
-    }
-
-
-    .section-title {
-
-        gap: 8px;
-
-        margin-bottom: 28px;
+        width: min(330px, 92vw);
 
     }
 
 
-    .music-btn {
+    .section-heading span {
 
-        top: 12px;
-        right: 12px;
-
-        width: 44px;
-        height: 44px;
-
-    }
-
-
-    .hero-video {
-
-        margin-top: 20px;
+        width: 35px;
 
     }
 

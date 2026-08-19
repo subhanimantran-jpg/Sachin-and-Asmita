@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>शुभविवाह सोहळा</title>
+    <title>शुभ निमंत्रण</title>
 
 
     <link
@@ -25,9 +25,10 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Tiro+Devanagari+Marathi&display=swap"
         rel="stylesheet"
     >
+
 
     <link
         rel="stylesheet"
@@ -47,40 +48,24 @@
         class="opening-screen"
     >
 
-        <div class="opening-border"></div>
-
-        <div class="opening-pattern pattern-one"></div>
-
-        <div class="opening-pattern pattern-two"></div>
+        <div class="opening-overlay"></div>
 
 
         <div class="opening-content">
 
 
+            <!-- LOGO -->
+
+            <img
+                src="assets/images/logo.png"
+                alt="Logo"
+                class="opening-logo"
+            >
+
+
             <p class="ganesh-mantra">
 
                 ॥ श्री गणेशाय नमः ॥
-
-            </p>
-
-
-            <div class="gold-divider"></div>
-
-
-            <div class="ganpati-frame">
-
-                <img
-                    src="assets/images/ganpati.jpg"
-                    alt="श्री गणेश"
-                    class="ganpati-image"
-                >
-
-            </div>
-
-
-            <p class="blessing-text">
-
-                मंगलमूर्तीच्या कृपेने
 
             </p>
 
@@ -106,6 +91,7 @@
             <button
                 id="openInvitationBtn"
                 class="open-button"
+                type="button"
             >
 
                 निमंत्रण उघडा
@@ -116,19 +102,6 @@
         </div>
 
     </section>
-
-
-
-    <!-- REVEAL EFFECT -->
-
-    <div
-        id="revealScreen"
-        class="reveal-screen"
-    >
-
-        <div class="reveal-circle"></div>
-
-    </div>
 
 
 
@@ -145,32 +118,31 @@
         <button
             id="musicBtn"
             class="music-btn"
-            aria-label="Background Music"
+            type="button"
         >
 
-            <span class="music-bars">
-
-                <i></i>
-                <i></i>
-                <i></i>
-
-            </span>
+            ♫
 
         </button>
 
 
 
-        <!-- HERO SECTION -->
+        <!-- HERO -->
 
         <section class="hero-section">
 
 
-            <div class="hero-border"></div>
-
-            <div class="hero-pattern"></div>
+            <div class="hero-overlay"></div>
 
 
-            <div class="hero-inner">
+            <div class="hero-content">
+
+
+                <img
+                    src="assets/images/logo.png"
+                    alt="Logo"
+                    class="hero-logo"
+                >
 
 
                 <p class="hero-ganesh">
@@ -193,13 +165,9 @@
                 ></h1>
 
 
-                <div class="ornament-line">
+                <div class="gold-line">
 
-                    <span></span>
-
-                    <b></b>
-
-                    <span></span>
+                    ✦
 
                 </div>
 
@@ -217,32 +185,69 @@
 
 
 
-                <!-- YOUTUBE VIDEO -->
+                <!-- VIDEO -->
 
                 <div
                     id="videoContainer"
-                    class="video-container hero-video"
+                    class="video-container"
                 >
 
-                    <div class="video-placeholder">
-
-                        व्हिडिओ लोड होत आहे...
-
-                    </div>
+                    व्हिडिओ लोड होत आहे...
 
                 </div>
 
 
-                <div class="scroll-down">
+                <p class="scroll-text">
 
-                    <span>खाली स्क्रोल करा</span>
+                    खाली स्क्रोल करा ↓
 
-                    <div class="scroll-line"></div>
-
-                </div>
+                </p>
 
 
             </div>
+
+        </section>
+
+
+
+        <!-- PRE WEDDING -->
+
+        <section class="pre-wedding-section">
+
+
+            <div class="section-heading">
+
+                <span></span>
+
+                <h2
+                    id="preWeddingEvent"
+                ></h2>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="pre-wedding-card">
+
+
+                <p
+                    id="preWeddingDate"
+                ></p>
+
+
+                <p
+                    id="preWeddingTime"
+                ></p>
+
+
+                <p
+                    id="preWeddingVenue"
+                ></p>
+
+
+            </div>
+
 
         </section>
 
@@ -253,13 +258,17 @@
         <section class="details-section">
 
 
-            <div class="section-title">
+            <div class="section-heading">
 
-                <div class="title-line"></div>
+                <span></span>
 
-                <h2>विवाह सोहळा</h2>
+                <h2>
 
-                <div class="title-line"></div>
+                    विवाह सोहळा
+
+                </h2>
+
+                <span></span>
 
             </div>
 
@@ -267,7 +276,7 @@
             <div class="details-wrapper">
 
 
-                <article class="detail-card">
+                <div class="detail-card">
 
                     <p class="detail-label">
 
@@ -285,11 +294,12 @@
                         id="weddingDay"
                     ></p>
 
-                </article>
+
+                </div>
 
 
 
-                <article class="detail-card">
+                <div class="detail-card">
 
                     <p class="detail-label">
 
@@ -302,11 +312,12 @@
                         id="weddingTime"
                     ></h3>
 
-                </article>
+
+                </div>
 
 
 
-                <article class="detail-card venue-card">
+                <div class="detail-card venue-card">
 
                     <p class="detail-label">
 
@@ -336,27 +347,33 @@
 
                     </a>
 
-                </article>
+
+                </div>
 
 
             </div>
+
 
         </section>
 
 
 
-        <!-- FAMILY SECTION -->
+        <!-- FAMILY -->
 
         <section class="family-section">
 
 
-            <div class="section-title">
+            <div class="section-heading">
 
-                <div class="title-line"></div>
+                <span></span>
 
-                <h2>परिवार</h2>
+                <h2>
 
-                <div class="title-line"></div>
+                    परिवार
+
+                </h2>
+
+                <span></span>
 
             </div>
 
@@ -366,7 +383,8 @@
 
                 <div class="family-card">
 
-                    <h3 class="family-heading">
+
+                    <h3>
 
                         वर पक्ष
 
@@ -375,8 +393,8 @@
 
                     <div
                         id="groomFamily"
-                        class="family-list"
                     ></div>
+
 
                 </div>
 
@@ -384,7 +402,8 @@
 
                 <div class="family-card">
 
-                    <h3 class="family-heading">
+
+                    <h3>
 
                         वधू पक्ष
 
@@ -393,13 +412,14 @@
 
                     <div
                         id="brideFamily"
-                        class="family-list"
                     ></div>
+
 
                 </div>
 
 
             </div>
+
 
         </section>
 
@@ -410,27 +430,26 @@
         <section class="inviter-section">
 
 
-            <div class="inviter-inner">
+            <div class="section-heading light-heading">
 
+                <span></span>
 
-                <div class="section-title light-title">
+                <h2>
 
-                    <div class="title-line"></div>
+                    निमंत्रक
 
-                    <h2>निमंत्रक</h2>
+                </h2>
 
-                    <div class="title-line"></div>
-
-                </div>
-
-
-                <div
-                    id="invitersList"
-                    class="inviters-list"
-                ></div>
-
+                <span></span>
 
             </div>
+
+
+            <div
+                id="invitersList"
+                class="inviters-list"
+            ></div>
+
 
         </section>
 
@@ -441,22 +460,33 @@
         <footer>
 
 
-            <div class="footer-divider"></div>
-
-
-            <h2
-                id="footerNames"
-            ></h2>
+            <img
+                src="assets/images/logo.png"
+                alt="Logo"
+                class="footer-logo"
+            >
 
 
             <p>
 
-                मंगलमय शुभेच्छा
+                आपल्या उपस्थितीने हा मंगल सोहळा
+                अधिक आनंदमय करावा,
+                ही नम्र विनंती.
 
             </p>
 
 
-            <div class="footer-divider"></div>
+            <a
+                id="instagramLink"
+                class="instagram-link"
+                href="#"
+                target="_blank"
+                rel="noopener"
+            >
+
+                Instagram
+
+            </a>
 
 
         </footer>

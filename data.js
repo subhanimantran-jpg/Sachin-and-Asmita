@@ -1,36 +1,74 @@
 const websiteData = {
 
     // वर व वधू
+
     groomName: "सचिन",
+
     brideName: "अस्मिता",
 
-    // विवाह
-    eventName: "शुभविवाह सोहळा",
 
-    // दिनांक व वेळ
-    date: "दि. २६/०८/२०२६ रोजी",
-    day: "बुधवार",
-    time: "दु. १२.४५ मि.",
+    // मुख्य कार्यक्रम
+
+    eventName:
+        "शुभविवाह सोहळा",
+
+
+    // विवाह दिनांक
+
+    date:
+        "दि. २६/०८/२०२६ रोजी",
+
+    day:
+        "बुधवार",
+
+    time:
+        "दु. १२.४५ मि.",
+
+
+    // साखरपुडा आणि हळदी
+
+    preWeddingEvent:
+        "।। साखरपुडा हळदी समारंभ ।।",
+
+    preWeddingDate:
+        "मंगळवार दि.२५/०८/२०२६ रोजी",
+
+    preWeddingTime:
+        "सायं ०७ वा.",
+
+    preWeddingVenue:
+        "विवाहस्थळी",
+
 
     // विवाहस्थळ
-    venueName: "विश्वक्रांती लॉन्स & मंगल कार्यालय",
+
+    venueName:
+        "विश्वक्रांती लॉन्स & मंगल कार्यालय",
 
     venueAddress:
         "माळी वस्ती, टाकळी सिकंदर, ता. मोहोळ, जि. सोलापूर",
 
-    // Google Maps Link
+
+    // MAP
+
     mapLink:
         "https://maps.app.goo.gl/cnhoLzhaKFS9cF7J9",
 
-    // YouTube Shorts ची पूर्ण Link
-    youtubeLink:
-        "https://youtube.com/shorts/A5XskweuHtA?feature=share",
 
-    // Background Music
+    // GOOGLE DRIVE VIDEO
+
+    videoLink:
+        "https://drive.google.com/file/d/1vKMOLltDIJOkzp9DnYtt5d2ocO3zm8yL/view?usp=drive_link",
+
+
+    // BACKGROUND MUSIC
+
     music:
         "assets/audio/music.mp3",
 
+
     // वर पक्ष
+
     groomFamily: [
 
         "चि. सचिन",
@@ -43,7 +81,9 @@ const websiteData = {
 
     ],
 
+
     // वधू पक्ष
+
     brideFamily: [
 
         "चि. सौ. कां. अस्मिता",
@@ -56,7 +96,9 @@ const websiteData = {
 
     ],
 
+
     // निमंत्रक
+
     inviters: [
 
         "सौ. विद्या औदुंबर व श्री. औदुंबर दिगंबर शिंदे (माळी)",
@@ -67,6 +109,12 @@ const websiteData = {
 
         "गं. भा. सुभद्रा दिगंबर शिंदे (माळी)"
 
-    ]
+    ],
+
+
+    // INSTAGRAM
+
+    instagramLink:
+        "https://www.instagram.com/your_username"
 
 };
