@@ -1,6 +1,11 @@
-/* =========================
+/* =====================================================
+   WEDDING WEBSITE - FINAL SCRIPT
+===================================================== */
+
+
+/* =====================================================
    ELEMENTS
-========================= */
+===================================================== */
 
 const openingNames =
     document.getElementById("openingNames");
@@ -77,9 +82,9 @@ const mainWebsite =
     document.getElementById("mainWebsite");
 
 
-/* =========================
+/* =====================================================
    OPENING DATA
-========================= */
+===================================================== */
 
 if (openingNames) {
 
@@ -108,9 +113,9 @@ if (openingDate) {
 }
 
 
-/* =========================
+/* =====================================================
    HERO DATA
-========================= */
+===================================================== */
 
 if (coupleNames) {
 
@@ -139,9 +144,9 @@ if (heroDate) {
 }
 
 
-/* =========================
+/* =====================================================
    WEDDING DETAILS
-========================= */
+===================================================== */
 
 if (weddingDate) {
 
@@ -191,9 +196,9 @@ if (mapButton) {
 }
 
 
-/* =========================
+/* =====================================================
    EXTRA EVENT
-========================= */
+===================================================== */
 
 if (extraEvent) {
 
@@ -203,9 +208,9 @@ if (extraEvent) {
 }
 
 
-/* =========================
-   FAMILY
-========================= */
+/* =====================================================
+   GROOM FAMILY
+===================================================== */
 
 if (
     groomFamily &&
@@ -213,7 +218,7 @@ if (
 ) {
 
     websiteData.groomFamily.forEach(
-        member => {
+        function (member) {
 
             const item =
                 document.createElement("div");
@@ -232,13 +237,17 @@ if (
 }
 
 
+/* =====================================================
+   BRIDE FAMILY
+===================================================== */
+
 if (
     brideFamily &&
     websiteData.brideFamily
 ) {
 
     websiteData.brideFamily.forEach(
-        member => {
+        function (member) {
 
             const item =
                 document.createElement("div");
@@ -257,9 +266,9 @@ if (
 }
 
 
-/* =========================
+/* =====================================================
    INVITERS
-========================= */
+===================================================== */
 
 if (
     invitersList &&
@@ -267,7 +276,7 @@ if (
 ) {
 
     websiteData.inviters.forEach(
-        name => {
+        function (name) {
 
             const item =
                 document.createElement("div");
@@ -286,22 +295,22 @@ if (
 }
 
 
-/* =========================
-   VIDEO SOURCE
-========================= */
+/* =====================================================
+   VIDEO
+===================================================== */
 
 if (
     weddingVideo &&
     websiteData.video
 ) {
 
-    const videoSource =
+    const source =
         weddingVideo.querySelector("source");
 
 
-    if (videoSource) {
+    if (source) {
 
-        videoSource.src =
+        source.src =
             websiteData.video;
 
         weddingVideo.load();
@@ -311,14 +320,20 @@ if (
 }
 
 
-/* =========================
-   BACKGROUND MUSIC
-========================= */
+/* =====================================================
+   MUSIC
+===================================================== */
 
 let musicPlaying = false;
 
-let musicPausedByVideo = false;
+let musicStoppedBySystem = false;
 
+let musicStoppedByVideo = false;
+
+
+/* =====================================================
+   SET MUSIC SOURCE
+===================================================== */
 
 if (
     backgroundMusic &&
@@ -328,26 +343,48 @@ if (
     backgroundMusic.src =
         websiteData.music;
 
+    backgroundMusic.loop =
+        true;
+
+    backgroundMusic.preload =
+        "auto";
+
     backgroundMusic.load();
 
 }
 
 
-/* =========================
-   PLAY MUSIC
-========================= */
+/* =====================================================
+   START MUSIC FROM BEGINNING
+===================================================== */
 
-function playMusic() {
+function startMusicFromBeginning() {
 
     if (!backgroundMusic) {
+
         return;
+
     }
 
 
-    backgroundMusic.play()
-        .then(() => {
+    /*
+     * प्रत्येक नवीन start ला
+     * music सुरुवातीपासून.
+     */
 
-            musicPlaying = true;
+    backgroundMusic.currentTime =
+        0;
+
+
+    backgroundMusic.play()
+        .then(function () {
+
+            musicPlaying =
+                true;
+
+            musicStoppedBySystem =
+                false;
+
 
             if (musicBtn) {
 
@@ -358,29 +395,56 @@ function playMusic() {
             }
 
         })
-        .catch(() => {
+        .catch(function () {
 
-            musicPlaying = false;
+            musicPlaying =
+                false;
 
         });
 
 }
 
 
-/* =========================
-   PAUSE MUSIC
-========================= */
+/* =====================================================
+   STOP MUSIC COMPLETELY
+===================================================== */
 
-function pauseMusic() {
+function stopMusicCompletely() {
 
     if (!backgroundMusic) {
+
         return;
+
     }
 
 
+    /*
+     * Music पूर्ण stop
+     */
+
     backgroundMusic.pause();
 
-    musicPlaying = false;
+
+    /*
+     * पुढच्या वेळी सुरुवातीपासून
+     */
+
+    try {
+
+        backgroundMusic.currentTime =
+            0;
+
+    }
+
+    catch (error) {
+
+        console.log(error);
+
+    }
+
+
+    musicPlaying =
+        false;
 
 
     if (musicBtn) {
@@ -394,9 +458,9 @@ function pauseMusic() {
 }
 
 
-/* =========================
+/* =====================================================
    OPEN INVITATION
-========================= */
+===================================================== */
 
 if (
     openInvitationBtn &&
@@ -410,7 +474,7 @@ if (
 
 
             /*
-             * Website show
+             * Main website show
              */
 
             mainWebsite.classList.add(
@@ -419,10 +483,10 @@ if (
 
 
             /*
-             * Music सुरू
+             * Music नेहमी सुरुवातीपासून
              */
 
-            playMusic();
+            startMusicFromBeginning();
 
 
             /*
@@ -434,12 +498,19 @@ if (
             );
 
 
-            setTimeout(() => {
+            /*
+             * Opening screen remove
+             */
 
-                openingScreen.style.display =
-                    "none";
+            setTimeout(
+                function () {
 
-            }, 1000);
+                    openingScreen.style.display =
+                        "none";
+
+                },
+                1000
+            );
 
         }
     );
@@ -447,9 +518,9 @@ if (
 }
 
 
-/* =========================
+/* =====================================================
    MUSIC BUTTON
-========================= */
+===================================================== */
 
 if (
     musicBtn &&
@@ -463,7 +534,7 @@ if (
 
             /*
              * Video चालू असल्यास
-             * music manually सुरू करू नये.
+             * Music सुरू करू नका.
              */
 
             if (
@@ -479,13 +550,22 @@ if (
 
             if (musicPlaying) {
 
-                pauseMusic();
+                /*
+                 * Manual OFF
+                 */
+
+                stopMusicCompletely();
 
             }
 
             else {
 
-                playMusic();
+                /*
+                 * Manual ON
+                 * सुरुवातीपासून
+                 */
+
+                startMusicFromBeginning();
 
             }
 
@@ -495,10 +575,9 @@ if (
 }
 
 
-/* =========================
+/* =====================================================
    VIDEO PLAY
-   MUSIC OFF
-========================= */
+===================================================== */
 
 if (weddingVideo) {
 
@@ -506,37 +585,42 @@ if (weddingVideo) {
         "play",
         function () {
 
+
             /*
-             * Video सुरू = Music OFF
+             * Video चालू झाला
+             * Music पूर्ण बंद.
              */
 
-            pauseMusic();
+            stopMusicCompletely();
 
-            musicPausedByVideo =
+
+            musicStoppedByVideo =
                 true;
 
         }
     );
 
 
-    /* =========================
+    /* =================================================
        VIDEO PAUSE
-    ========================== */
+    ================================================= */
 
     weddingVideo.addEventListener(
         "pause",
         function () {
 
+
             /*
-             * Video pause = Music ON
+             * Video pause झाला तर
+             * Music पुन्हा सुरुवातीपासून.
              */
 
             if (
-                musicPausedByVideo &&
+                musicStoppedByVideo &&
                 !weddingVideo.ended
             ) {
 
-                playMusic();
+                startMusicFromBeginning();
 
             }
 
@@ -544,22 +628,176 @@ if (weddingVideo) {
     );
 
 
-    /* =========================
-       VIDEO END
-    ========================== */
+    /* =================================================
+       VIDEO ENDED
+    ================================================= */
 
     weddingVideo.addEventListener(
         "ended",
         function () {
 
-            /*
-             * Video पूर्ण = Music ON
-             */
 
-            musicPausedByVideo =
+            musicStoppedByVideo =
                 false;
 
-            playMusic();
+
+            /*
+             * Video पूर्ण झाल्यावर
+             * Music सुरुवातीपासून.
+             */
+
+            startMusicFromBeginning();
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   PAGE VISIBILITY
+===================================================== */
+
+document.addEventListener(
+    "visibilitychange",
+    function () {
+
+
+        if (document.hidden) {
+
+
+            /*
+             * User दुसऱ्या tab/app मध्ये गेला
+             * किंवा mobile screen बंद केली.
+             */
+
+            musicStoppedBySystem =
+                true;
+
+
+            stopMusicCompletely();
+
+        }
+
+        else {
+
+
+            /*
+             * User परत website वर आला.
+             *
+             * Music automatically सुरू करू नका.
+             * User ने पुन्हा button/open invitation
+             * केल्यावरच सुरू होईल.
+             */
+
+            musicPlaying =
+                false;
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   PAGE HIDE
+===================================================== */
+
+window.addEventListener(
+    "pagehide",
+    function () {
+
+        musicStoppedBySystem =
+            true;
+
+        stopMusicCompletely();
+
+    }
+);
+
+
+/* =====================================================
+   BEFORE UNLOAD
+===================================================== */
+
+window.addEventListener(
+    "beforeunload",
+    function () {
+
+        musicStoppedBySystem =
+            true;
+
+        stopMusicCompletely();
+
+    }
+);
+
+
+/* =====================================================
+   WINDOW BLUR
+===================================================== */
+
+window.addEventListener(
+    "blur",
+    function () {
+
+
+        /*
+         * Browser/window focus गेला तर
+         * music बंद.
+         */
+
+        if (document.hidden) {
+
+            musicStoppedBySystem =
+                true;
+
+            stopMusicCompletely();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   PAGE UNLOAD SAFETY
+===================================================== */
+
+window.addEventListener(
+    "unload",
+    function () {
+
+        stopMusicCompletely();
+
+    }
+);
+
+
+/* =====================================================
+   FINAL MUSIC SAFETY
+===================================================== */
+
+if (backgroundMusic) {
+
+    backgroundMusic.addEventListener(
+        "play",
+        function () {
+
+
+            /*
+             * Page hidden असेल तर
+             * कोणत्याही परिस्थितीत music चालू नको.
+             */
+
+            if (
+                document.hidden ||
+                musicStoppedBySystem
+            ) {
+
+                stopMusicCompletely();
+
+            }
 
         }
     );
